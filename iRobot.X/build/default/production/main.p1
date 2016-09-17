@@ -1,10 +1,47 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"270 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic16f877a.h
-[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"2651 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic16f877a.h
+[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
+"55
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
+"2521
+[v _RB4 `Vb ~T0 @X0 0 e@52 ]
+"2513
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"2515
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"2517
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"7 motor.h
+[v _moveCCW `(v ~T0 @X0 0 ef1`ui ]
+"9 ADC.h
+[v _ADCMain `(v ~T0 @X0 0 ef ]
+"30 ser.h
+[v _DriveDirect `(v ~T0 @X0 0 ef2`i`i ]
+"33 LCD.h
+[v _lcdWriteString `(v ~T0 @X0 0 ef1`*uc ]
+[p mainexit ]
 [v F1091 `(v ~T0 @X0 1 tf1`ul ]
 "152 C:\Program Files (x86)\Microchip\xc8\v1.38\include\pic.h
 [v __delay `JF1091 ~T0 @X0 0 e ]
 [p i __delay ]
+"7 SPI.h
+[v _setupSPI `(v ~T0 @X0 0 ef ]
+"19 ser.h
+[v _ser_init `(v ~T0 @X0 0 ef ]
+"39 LCD.h
+[v _setupLCD `(v ~T0 @X0 0 ef ]
+"10 ADC.h
+[v _setupADC `(v ~T0 @X0 0 ef ]
+"8 SPI.h
+[v _spi_transfer `(uc ~T0 @X0 0 ef1`uc ]
+"22 ser.h
+[v _ser_putch `(v ~T0 @X0 0 ef1`uc ]
+"36 LCD.h
+[v _lcdWriteToDigitBCD `(v ~T0 @X0 0 ef1`ui ]
+"33 ser.h
+[v _getSensorData `(i ~T0 @X0 0 ef2`uc`uc ]
+"30 LCD.h
+[v _lcdSetCursor `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -1085,6 +1122,109 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 [; ;main.h: 37: signed int totalangleTurned = 0;
+"17 LCD.h
+[v _stepCountNeg `Vui ~T0 @X0 1 e ]
+[i _stepCountNeg
+-> -> 0 `i `ui
+]
+[; ;LCD.h: 17: volatile unsigned int stepCountNeg = 0;
+"18
+[v _degrees `Vui ~T0 @X0 1 e ]
+[i _degrees
+-> -> 0 `i `ui
+]
+[; ;LCD.h: 18: volatile unsigned int degrees = 0;
+[; ;LCD.h: 21: void lcdWriteStepCount(unsigned int stepCount);
+[; ;LCD.h: 24: void lcdWriteControl(unsigned char databyte);
+[; ;LCD.h: 27: void lcdWriteData(unsigned char databyte);
+[; ;LCD.h: 30: void lcdSetCursor(unsigned char address);
+[; ;LCD.h: 33: void lcdWriteString(char * s);
+[; ;LCD.h: 36: void lcdWriteToDigitBCD(unsigned int data);
+[; ;LCD.h: 39: void setupLCD(void);
+"6 ser.h
+[v _speedH `uc ~T0 @X0 1 e ]
+[i _speedH
+-> -> 0 `i `uc
+]
+[; ;ser.h: 6: unsigned char speedH = 0;
+"7
+[v _speedL `uc ~T0 @X0 1 e ]
+[i _speedL
+-> -> 0 `i `uc
+]
+[; ;ser.h: 7: unsigned char speedL = 0;
+"8
+[v _radH `uc ~T0 @X0 1 e ]
+[i _radH
+-> -> 0 `i `uc
+]
+[; ;ser.h: 8: unsigned char radH = 0;
+"9
+[v _radL `uc ~T0 @X0 1 e ]
+[i _radL
+-> -> 0 `i `uc
+]
+[; ;ser.h: 9: unsigned char radL = 0;
+"11
+[v _VelocityRight `ui ~T0 @X0 1 e ]
+[i _VelocityRight
+-> -> 0 `i `ui
+]
+[; ;ser.h: 11: unsigned int VelocityRight = 0;
+"12
+[v _VelocityLeft `ui ~T0 @X0 1 e ]
+[i _VelocityLeft
+-> -> 0 `i `ui
+]
+[; ;ser.h: 12: unsigned int VelocityLeft = 0;
+"13
+[v _RightSpeedH `uc ~T0 @X0 1 e ]
+[i _RightSpeedH
+-> -> 0 `i `uc
+]
+[; ;ser.h: 13: unsigned char RightSpeedH = 0;
+"14
+[v _RightSpeedL `uc ~T0 @X0 1 e ]
+[i _RightSpeedL
+-> -> 0 `i `uc
+]
+[; ;ser.h: 14: unsigned char RightSpeedL = 0;
+"15
+[v _LeftSpeedH `uc ~T0 @X0 1 e ]
+[i _LeftSpeedH
+-> -> 0 `i `uc
+]
+[; ;ser.h: 15: unsigned char LeftSpeedH = 0;
+"16
+[v _LeftSpeedL `uc ~T0 @X0 1 e ]
+[i _LeftSpeedL
+-> -> 0 `i `uc
+]
+[; ;ser.h: 16: unsigned char LeftSpeedL = 0;
+[; ;ser.h: 19: void ser_init(void);
+[; ;ser.h: 22: void ser_putch(unsigned char c);
+[; ;ser.h: 25: unsigned char ser_getch();
+[; ;ser.h: 28: void Drive(unsigned char speedH, unsigned char speedL, unsigned char radH, unsigned char radL);
+[; ;ser.h: 30: void DriveDirect(signed int VelocityRight, signed int VelocityLeft);
+[; ;ser.h: 33: signed int getSensorData(unsigned char packetID, unsigned char bytes);
+[; ;SPI.h: 7: void setupSPI(void);
+[; ;SPI.h: 8: unsigned char spi_transfer(unsigned char data);
+"6 ADC.h
+[v _adcRAW `Vui ~T0 @X0 1 e ]
+[i _adcRAW
+-> -> 0 `i `ui
+]
+[; ;ADC.h: 6: volatile unsigned int adcRAW = 0;
+"7
+[v _Distance `Vui ~T0 @X0 1 e ]
+[i _Distance
+-> -> 0 `i `ui
+]
+[; ;ADC.h: 7: volatile unsigned int Distance = 0;
+[; ;ADC.h: 9: void ADCMain(void);
+[; ;ADC.h: 10: void setupADC(void);
+[; ;ADC.h: 11: unsigned int getADC(void);
+[; ;ADC.h: 12: unsigned int adcConvertMM(unsigned int);
 [; ;motor.h: 6: void moveCW(unsigned int numberOfSteps);
 [; ;motor.h: 7: void moveCCW(unsigned int numberOfSteps);
 [; ;motor.h: 8: void scanRoutine();
@@ -1100,478 +1240,430 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 [; ;motor.h: 10: char currentStep = 0;
-"4 motor.c
-[v _stepState `Vui ~T0 @X0 1 e ]
-[i _stepState
--> -> 0 `i `ui
-]
-[; ;motor.c: 4: volatile unsigned int stepState = 0;
-"6
-[v _moveCW `(v ~T0 @X0 1 ef1`ui ]
-{
-[; ;motor.c: 6: void moveCW(unsigned int numberOfSteps) {
-[e :U _moveCW ]
-[v _numberOfSteps `ui ~T0 @X0 1 r1 ]
-[f ]
-"8
-[v _i `Vui ~T0 @X0 1 a ]
-[; ;motor.c: 8: volatile unsigned int i = 0;
-[e = _i -> -> 0 `i `ui ]
-"9
-[v _stepsRemaining `Vui ~T0 @X0 1 a ]
-[; ;motor.c: 9: volatile unsigned int stepsRemaining = numberOfSteps;
-[e = _stepsRemaining _numberOfSteps ]
-[; ;motor.c: 10: while (i < numberOfSteps) {
+"9 main.c
+[v _time_count `Vui ~T0 @X0 1 e ]
+[; ;main.c: 9: volatile unsigned int time_count;
 "10
-[e $U 97  ]
-[e :U 98 ]
-{
-[; ;motor.c: 11: if (stepState == 0) {
-"11
-[e $ ! == _stepState -> -> 0 `i `ui 100  ]
-{
-[; ;motor.c: 12: PORTC = 0b00111100;
-"12
-[e = _PORTC -> -> 60 `i `uc ]
+[v _FLAG_1000MS `Vb ~T0 @X0 1 e ]
+[; ;main.c: 10: volatile bit FLAG_1000MS;
 "13
-}
-[; ;motor.c: 13: }
-[e $U 101  ]
+[v _controlByte `uc ~T0 @X0 1 e ]
+[i _controlByte
+-> -> 0 `i `uc
+]
+[; ;main.c: 13: unsigned char controlByte = 0;
 "14
-[e :U 100 ]
-[; ;motor.c: 14: else if (stepState == 1) {
-[e $ ! == _stepState -> -> 1 `i `ui 102  ]
-{
-[; ;motor.c: 15: PORTC = 0b00101110;
-"15
-[e = _PORTC -> -> 46 `i `uc ]
+[v _loop `i ~T0 @X0 1 e ]
+[i _loop
+-> 0 `i
+]
+[; ;main.c: 14: signed int loop = 0;
 "16
-}
-[; ;motor.c: 16: }
-[e $U 103  ]
+[v _PB6Counter `uc ~T0 @X0 1 e ]
+[i _PB6Counter
+-> -> 0 `i `uc
+]
+[; ;main.c: 16: unsigned char PB6Counter = 0;
 "17
-[e :U 102 ]
-[; ;motor.c: 17: else if (stepState == 2) {
-[e $ ! == _stepState -> -> 2 `i `ui 104  ]
-{
-[; ;motor.c: 18: PORTC = 0b00101011;
+[v _PB7Counter `uc ~T0 @X0 1 e ]
+[i _PB7Counter
+-> -> 0 `i `uc
+]
+[; ;main.c: 17: unsigned char PB7Counter = 0;
 "18
-[e = _PORTC -> -> 43 `i `uc ]
-"19
-}
-[; ;motor.c: 19: }
-[e $U 105  ]
+[v _PB8Counter `uc ~T0 @X0 1 e ]
+[i _PB8Counter
+-> -> 0 `i `uc
+]
+[; ;main.c: 18: unsigned char PB8Counter = 0;
 "20
-[e :U 104 ]
-[; ;motor.c: 20: else if (stepState == 3) {
-[e $ ! == _stepState -> -> 3 `i `ui 106  ]
-{
-[; ;motor.c: 21: PORTC = 0b00100111;
-"21
-[e = _PORTC -> -> 39 `i `uc ]
-"22
-}
-[; ;motor.c: 22: }
-[e $U 107  ]
-"23
-[e :U 106 ]
-[; ;motor.c: 23: else if (stepState == 4) {
-[e $ ! == _stepState -> -> 4 `i `ui 108  ]
-{
-[; ;motor.c: 24: PORTC = 0b00110101;
+[v _count `uc ~T0 @X0 1 e ]
+[i _count
+-> -> 0 `i `uc
+]
+[; ;main.c: 20: char count = 0;
+[v F1177 `(v ~T0 @X0 1 tf ]
 "24
-[e = _PORTC -> -> 53 `i `uc ]
-"25
-}
-[; ;motor.c: 25: }
-[e $U 109  ]
+[v _isr `IF1177 ~T0 @X0 1 e ]
+{
+[; ;main.c: 24: void interrupt isr(void){
+[e :U _isr ]
+[f ]
+[; ;main.c: 26: if(TMR0IF){
 "26
-[e :U 108 ]
-[; ;motor.c: 26: else if (stepState == 5) {
-[e $ ! == _stepState -> -> 5 `i `ui 110  ]
+[e $ ! _TMR0IF 97  ]
 {
-[; ;motor.c: 27: PORTC = 0b00010111;
+[; ;main.c: 27: TMR0IF = 0;
 "27
-[e = _PORTC -> -> 23 `i `uc ]
+[e = _TMR0IF -> -> 0 `i `b ]
+[; ;main.c: 28: TMR0 = 100;
 "28
-}
-[; ;motor.c: 28: }
-[e $U 111  ]
+[e = _TMR0 -> -> 100 `i `uc ]
+[; ;main.c: 29: time_count++;
 "29
-[e :U 110 ]
-[; ;motor.c: 29: else if (stepState == 6) {
-[e $ ! == _stepState -> -> 6 `i `ui 112  ]
-{
-[; ;motor.c: 30: PORTC = 0b00011011;
-"30
-[e = _PORTC -> -> 27 `i `uc ]
+[e ++ _time_count -> -> 1 `i `ui ]
+[; ;main.c: 31: if(time_count % 1 == 0) {
 "31
-}
-[; ;motor.c: 31: }
-[e $U 113  ]
-"32
-[e :U 112 ]
-[; ;motor.c: 32: else if (stepState == 7) {
-[e $ ! == _stepState -> -> 7 `i `ui 114  ]
+[e $ ! == % _time_count -> -> 1 `i `ui -> -> 0 `i `ui 98  ]
 {
-[; ;motor.c: 33: PORTC = 0b00011110;
-"33
-[e = _PORTC -> -> 30 `i `uc ]
 "34
 }
-[e :U 114 ]
-"35
-[e :U 113 ]
-[e :U 111 ]
-[e :U 109 ]
-[e :U 107 ]
-[e :U 105 ]
-[e :U 103 ]
-[e :U 101 ]
-[; ;motor.c: 34: }
-[; ;motor.c: 35: _delay((unsigned long)((5)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;motor.c: 37: i++;
-"37
-[e ++ _i -> -> 1 `i `ui ]
-[; ;motor.c: 38: stepState++;
-"38
-[e ++ _stepState -> -> 1 `i `ui ]
-[; ;motor.c: 39: if (stepState > 7) {
-"39
-[e $ ! > _stepState -> -> 7 `i `ui 115  ]
+[e :U 98 ]
+[; ;main.c: 34: }
+[; ;main.c: 36: if(time_count % 1000 == 0){
+"36
+[e $ ! == % _time_count -> -> 1000 `i `ui -> -> 0 `i `ui 99  ]
 {
-[; ;motor.c: 40: stepState = 0;
+[; ;main.c: 37: RB4 = !RB4;
+"37
+[e = _RB4 ! _RB4 ]
+[; ;main.c: 39: time_count = 0;
+"39
+[e = _time_count -> -> 0 `i `ui ]
 "40
-[e = _stepState -> -> 0 `i `ui ]
-"41
 }
-[e :U 115 ]
+[e :U 99 ]
+[; ;main.c: 40: }
+[; ;main.c: 42: if (!RB0 == 1)
 "42
+[e $ ! == -> ! _RB0 `i -> 1 `i 100  ]
+[; ;main.c: 43: PB8Counter++;
+"43
+[e ++ _PB8Counter -> -> 1 `i `uc ]
+[e :U 100 ]
+[; ;main.c: 44: if (!RB1 == 1)
+"44
+[e $ ! == -> ! _RB1 `i -> 1 `i 101  ]
+[; ;main.c: 45: PB7Counter++;
+"45
+[e ++ _PB7Counter -> -> 1 `i `uc ]
+[e :U 101 ]
+[; ;main.c: 46: if (!RB2 == 1)
+"46
+[e $ ! == -> ! _RB2 `i -> 1 `i 102  ]
+[; ;main.c: 47: PB6Counter++;
+"47
+[e ++ _PB6Counter -> -> 1 `i `uc ]
+[e :U 102 ]
+"63
 }
 [e :U 97 ]
-"10
-[e $ < _i _numberOfSteps 98  ]
-[e :U 99 ]
-[; ;motor.c: 41: }
-[; ;motor.c: 42: }
-[; ;motor.c: 43: }
-"43
+[; ;main.c: 63: }
+[; ;main.c: 64: }
+"64
 [e :UE 96 ]
 }
-"45
-[v _moveCCW `(v ~T0 @X0 1 ef1`ui ]
-{
-[; ;motor.c: 45: void moveCCW(unsigned int numberOfSteps) {
-[e :U _moveCCW ]
-[v _numberOfSteps `ui ~T0 @X0 1 r1 ]
-[f ]
-"47
-[v _i `Vui ~T0 @X0 1 a ]
-[; ;motor.c: 47: volatile unsigned int i = 0;
-[e = _i -> -> 0 `i `ui ]
-"48
-[v _stepsRemaining `Vui ~T0 @X0 1 a ]
-[; ;motor.c: 48: volatile unsigned int stepsRemaining = numberOfSteps;
-[e = _stepsRemaining _numberOfSteps ]
-[; ;motor.c: 49: while (i < numberOfSteps) {
-"49
-[e $U 117  ]
-[e :U 118 ]
-{
-[; ;motor.c: 51: if (stepState == 0) {
-"51
-[e $ ! == _stepState -> -> 0 `i `ui 120  ]
-{
-[; ;motor.c: 52: PORTC = 0b00111100;
-"52
-[e = _PORTC -> -> 60 `i `uc ]
-"53
-}
-[; ;motor.c: 53: }
-[e $U 121  ]
-"54
-[e :U 120 ]
-[; ;motor.c: 54: else if (stepState == 1) {
-[e $ ! == _stepState -> -> 1 `i `ui 122  ]
-{
-[; ;motor.c: 55: PORTC = 0b00101110;
-"55
-[e = _PORTC -> -> 46 `i `uc ]
-"56
-}
-[; ;motor.c: 56: }
-[e $U 123  ]
-"57
-[e :U 122 ]
-[; ;motor.c: 57: else if (stepState == 2) {
-[e $ ! == _stepState -> -> 2 `i `ui 124  ]
-{
-[; ;motor.c: 58: PORTC = 0b00101011;
-"58
-[e = _PORTC -> -> 43 `i `uc ]
-"59
-}
-[; ;motor.c: 59: }
-[e $U 125  ]
-"60
-[e :U 124 ]
-[; ;motor.c: 60: else if (stepState == 3) {
-[e $ ! == _stepState -> -> 3 `i `ui 126  ]
-{
-[; ;motor.c: 61: PORTC = 0b00100111;
-"61
-[e = _PORTC -> -> 39 `i `uc ]
-"62
-}
-[; ;motor.c: 62: }
-[e $U 127  ]
-"63
-[e :U 126 ]
-[; ;motor.c: 63: else if (stepState == 4) {
-[e $ ! == _stepState -> -> 4 `i `ui 128  ]
-{
-[; ;motor.c: 64: PORTC = 0b00110101;
-"64
-[e = _PORTC -> -> 53 `i `uc ]
-"65
-}
-[; ;motor.c: 65: }
-[e $U 129  ]
-"66
-[e :U 128 ]
-[; ;motor.c: 66: else if (stepState == 5) {
-[e $ ! == _stepState -> -> 5 `i `ui 130  ]
-{
-[; ;motor.c: 67: PORTC = 0b00010111;
 "67
-[e = _PORTC -> -> 23 `i `uc ]
-"68
-}
-[; ;motor.c: 68: }
-[e $U 131  ]
-"69
-[e :U 130 ]
-[; ;motor.c: 69: else if (stepState == 6) {
-[e $ ! == _stepState -> -> 6 `i `ui 132  ]
+[v _initWallFollow `(v ~T0 @X0 1 ef ]
 {
-[; ;motor.c: 70: PORTC = 0b00011011;
-"70
-[e = _PORTC -> -> 27 `i `uc ]
-"71
-}
-[; ;motor.c: 71: }
-[e $U 133  ]
-"72
-[e :U 132 ]
-[; ;motor.c: 72: else if (stepState == 7) {
-[e $ ! == _stepState -> -> 7 `i `ui 134  ]
-{
-[; ;motor.c: 73: PORTC = 0b00011110;
-"73
-[e = _PORTC -> -> 30 `i `uc ]
-"74
-}
-[e :U 134 ]
-"75
-[e :U 133 ]
-[e :U 131 ]
-[e :U 129 ]
-[e :U 127 ]
-[e :U 125 ]
-[e :U 123 ]
-[e :U 121 ]
-[; ;motor.c: 74: }
-[; ;motor.c: 75: _delay((unsigned long)((5)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;motor.c: 77: i++;
-"77
-[e ++ _i -> -> 1 `i `ui ]
-[; ;motor.c: 78: if (stepState != 0){
-"78
-[e $ ! != _stepState -> -> 0 `i `ui 135  ]
-{
-[; ;motor.c: 79: stepState--;
-"79
-[e -- _stepState -> -> 1 `i `ui ]
-"80
-}
-[; ;motor.c: 80: } else {
-[e $U 136  ]
-[e :U 135 ]
-{
-[; ;motor.c: 81: stepState = 7;
-"81
-[e = _stepState -> -> 7 `i `ui ]
-"82
-}
-[e :U 136 ]
-"83
-}
-[e :U 117 ]
-"49
-[e $ < _i _numberOfSteps 118  ]
-[e :U 119 ]
-[; ;motor.c: 82: }
-[; ;motor.c: 83: }
-[; ;motor.c: 84: }
-"84
-[e :UE 116 ]
-}
-"86
-[v _scanRoutine `(v ~T0 @X0 1 ef ]
-{
-[; ;motor.c: 86: void scanRoutine(void){
-[e :U _scanRoutine ]
+[; ;main.c: 67: void initWallFollow(void){
+[e :U _initWallFollow ]
 [f ]
-[; ;motor.c: 87: _delay((unsigned long)((1000)*(20000000/4000.0)));
+[; ;main.c: 69: adcClosest = 0;
+"69
+[e = _adcClosest -> 0 `i ]
+[; ;main.c: 71: for (loop = 0; loop < 400; loop++){
+"71
+{
+[e = _loop -> 0 `i ]
+[e $ < _loop -> 400 `i 104  ]
+[e $U 105  ]
+[e :U 104 ]
+{
+[; ;main.c: 72: moveCCW(1);
+"72
+[e ( _moveCCW (1 -> -> 1 `i `ui ]
+[; ;main.c: 73: ADCMain();
+"73
+[e ( _ADCMain ..  ]
+[; ;main.c: 75: if (adcRAW > adcClosest){
+"75
+[e $ ! > _adcRAW -> _adcClosest `ui 107  ]
+{
+[; ;main.c: 76: adcClosest = adcRAW;
+"76
+[e = _adcClosest -> _adcRAW `i ]
+"77
+}
+[e :U 107 ]
+"78
+}
+"71
+[e ++ _loop -> 1 `i ]
+[e $ < _loop -> 400 `i 104  ]
+[e :U 105 ]
+"78
+}
+[; ;main.c: 77: }
+[; ;main.c: 78: }
+[; ;main.c: 80: if(adcRAW != adcClosest){
+"80
+[e $ ! != _adcRAW -> _adcClosest `ui 108  ]
+{
+[; ;main.c: 81: DriveDirect(20,0);
+"81
+[e ( _DriveDirect (2 , -> 20 `i -> 0 `i ]
+[; ;main.c: 82: ADCMain();
+"82
+[e ( _ADCMain ..  ]
+"84
+}
+[; ;main.c: 84: } else if((adcRAW-20) < adcClosest && (adcRAW+20) > adcClosest){
+[e $U 109  ]
+[e :U 108 ]
+[e $ ! && < - _adcRAW -> -> 20 `i `ui -> _adcClosest `ui > + _adcRAW -> -> 20 `i `ui -> _adcClosest `ui 110  ]
+{
+[; ;main.c: 85: DriveDirect(20,0);
+"85
+[e ( _DriveDirect (2 , -> 20 `i -> 0 `i ]
+[; ;main.c: 86: lcdWriteString("arrived at closest point");
+"86
+[e ( _lcdWriteString (1 -> :s 1C `*uc ]
 "87
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+}
+[e :U 110 ]
 "89
-[v _i `Vui ~T0 @X0 1 a ]
-[; ;motor.c: 89: volatile unsigned int i = 0;
-[e = _i -> -> 0 `i `ui ]
-[; ;motor.c: 90: while (i < 400) {
-"90
-[e $U 138  ]
-[e :U 139 ]
-{
-[; ;motor.c: 92: if (stepState == 0) {
-"92
-[e $ ! == _stepState -> -> 0 `i `ui 141  ]
-{
-[; ;motor.c: 93: PORTC = 0b00111100;
+[e :U 109 ]
+[; ;main.c: 87: }
+[; ;main.c: 89: }
+[e :UE 103 ]
+}
 "93
-[e = _PORTC -> -> 60 `i `uc ]
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[; ;main.c: 93: void main(void){
+[e :U _main ]
+[f ]
+[; ;main.c: 94: _delay((unsigned long)((5000)*(20000000/4000.0)));
 "94
-}
-[; ;motor.c: 94: }
-[e $U 142  ]
-"95
-[e :U 141 ]
-[; ;motor.c: 95: else if (stepState == 1) {
-[e $ ! == _stepState -> -> 1 `i `ui 143  ]
-{
-[; ;motor.c: 96: PORTC = 0b00101110;
-"96
-[e = _PORTC -> -> 46 `i `uc ]
+[e ( __delay (1 -> * -> -> 5000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 97: setupSPI();
 "97
-}
-[; ;motor.c: 97: }
-[e $U 144  ]
+[e ( _setupSPI ..  ]
+[; ;main.c: 98: ser_init();
 "98
-[e :U 143 ]
-[; ;motor.c: 98: else if (stepState == 2) {
-[e $ ! == _stepState -> -> 2 `i `ui 145  ]
-{
-[; ;motor.c: 99: PORTC = 0b00101011;
+[e ( _ser_init ..  ]
+[; ;main.c: 99: setupLCD();
 "99
-[e = _PORTC -> -> 43 `i `uc ]
+[e ( _setupLCD ..  ]
+[; ;main.c: 100: setupADC();
 "100
-}
-[; ;motor.c: 100: }
-[e $U 146  ]
-"101
-[e :U 145 ]
-[; ;motor.c: 101: else if (stepState == 3) {
-[e $ ! == _stepState -> -> 3 `i `ui 147  ]
-{
-[; ;motor.c: 102: PORTC = 0b00100111;
+[e ( _setupADC ..  ]
+[v _controlByte `uc ~T0 @X0 1 a ]
+[; ;main.c: 102: unsigned char controlByte = 0b00001101;
 "102
-[e = _PORTC -> -> 39 `i `uc ]
+[e = _controlByte -> -> 13 `i `uc ]
+[; ;main.c: 103: spi_transfer(controlByte);
 "103
-}
-[; ;motor.c: 103: }
-[e $U 148  ]
-"104
-[e :U 147 ]
-[; ;motor.c: 104: else if (stepState == 4) {
-[e $ ! == _stepState -> -> 4 `i `ui 149  ]
-{
-[; ;motor.c: 105: PORTC = 0b00110101;
+[e ( _spi_transfer (1 _controlByte ]
+[; ;main.c: 105: _delay((unsigned long)((1000)*(20000000/4000.0)));
 "105
-[e = _PORTC -> -> 53 `i `uc ]
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 106: ser_putch(128);
 "106
-}
-[; ;motor.c: 106: }
-[e $U 150  ]
+[e ( _ser_putch (1 -> -> 128 `i `uc ]
+[; ;main.c: 107: _delay((unsigned long)((1000)*(20000000/4000.0)));
 "107
-[e :U 149 ]
-[; ;motor.c: 107: else if (stepState == 5) {
-[e $ ! == _stepState -> -> 5 `i `ui 151  ]
-{
-[; ;motor.c: 108: PORTC = 0b00010111;
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 108: ser_putch(132);
 "108
-[e = _PORTC -> -> 23 `i `uc ]
+[e ( _ser_putch (1 -> -> 132 `i `uc ]
+[; ;main.c: 109: _delay((unsigned long)((1000)*(20000000/4000.0)));
 "109
-}
-[; ;motor.c: 109: }
-[e $U 152  ]
-"110
-[e :U 151 ]
-[; ;motor.c: 110: else if (stepState == 6) {
-[e $ ! == _stepState -> -> 6 `i `ui 153  ]
-{
-[; ;motor.c: 111: PORTC = 0b00011011;
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;main.c: 111: lcdWriteToDigitBCD(500);
 "111
-[e = _PORTC -> -> 27 `i `uc ]
-"112
-}
-[; ;motor.c: 112: }
-[e $U 154  ]
-"113
-[e :U 153 ]
-[; ;motor.c: 113: else if (stepState == 7) {
-[e $ ! == _stepState -> -> 7 `i `ui 155  ]
-{
-[; ;motor.c: 114: PORTC = 0b00011110;
+[e ( _lcdWriteToDigitBCD (1 -> -> 500 `i `ui ]
+[; ;main.c: 114: while(1){
 "114
-[e = _PORTC -> -> 30 `i `uc ]
-"115
-}
-[e :U 155 ]
-"116
-[e :U 154 ]
-[e :U 152 ]
-[e :U 150 ]
-[e :U 148 ]
-[e :U 146 ]
-[e :U 144 ]
-[e :U 142 ]
-[; ;motor.c: 115: }
-[; ;motor.c: 116: _delay((unsigned long)((5)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-[; ;motor.c: 118: i++;
-"118
-[e ++ _i -> -> 1 `i `ui ]
-[; ;motor.c: 121: if (stepState != 0){
+[e :U 113 ]
+{
+[; ;main.c: 119: if (getSensorData(18,1) == 0b00000001){
+"119
+[e $ ! == ( _getSensorData (2 , -> -> 18 `i `uc -> -> 1 `i `uc -> 1 `i 115  ]
+{
+[; ;main.c: 120: totalDistTrav = 0;
+"120
+[e = _totalDistTrav -> 0 `i ]
+[; ;main.c: 121: DriveDirect(200,200);
 "121
-[e $ ! != _stepState -> -> 0 `i `ui 156  ]
-{
-[; ;motor.c: 122: stepState--;
+[e ( _DriveDirect (2 , -> 200 `i -> 200 `i ]
+[; ;main.c: 122: while (totalDistTrav < 2){
 "122
-[e -- _stepState -> -> 1 `i `ui ]
-"123
-}
-[; ;motor.c: 123: } else {
-[e $U 157  ]
-[e :U 156 ]
+[e $U 116  ]
+[e :U 117 ]
 {
-[; ;motor.c: 124: stepState = 7;
+[; ;main.c: 123: distTrav = getSensorData(19,2);
+"123
+[e = _distTrav ( _getSensorData (2 , -> -> 19 `i `uc -> -> 2 `i `uc ]
+[; ;main.c: 124: totalDistTrav = (totalDistTrav + distTrav);
 "124
-[e = _stepState -> -> 7 `i `ui ]
-"125
-}
-[e :U 157 ]
+[e = _totalDistTrav + _totalDistTrav _distTrav ]
+[; ;main.c: 126: lcdSetCursor(0x00);
 "126
-}
-[e :U 138 ]
-"90
-[e $ < _i -> -> 400 `i `ui 139  ]
-[e :U 140 ]
-[; ;motor.c: 125: }
-[; ;motor.c: 126: }
-[; ;motor.c: 127: }
+[e ( _lcdSetCursor (1 -> -> 0 `i `uc ]
+[; ;main.c: 127: lcdWriteToDigitBCD(totalDistTrav);
 "127
-[e :UE 137 ]
+[e ( _lcdWriteToDigitBCD (1 -> _totalDistTrav `ui ]
+"128
 }
+[e :U 116 ]
+"122
+[e $ < _totalDistTrav -> 2 `i 117  ]
+[e :U 118 ]
+[; ;main.c: 128: }
+[; ;main.c: 130: DriveDirect(250,250);
+"130
+[e ( _DriveDirect (2 , -> 250 `i -> 250 `i ]
+[; ;main.c: 131: while (totalDistTrav < 4000){
+"131
+[e $U 119  ]
+[e :U 120 ]
+{
+[; ;main.c: 132: distTrav = getSensorData(19,2);
+"132
+[e = _distTrav ( _getSensorData (2 , -> -> 19 `i `uc -> -> 2 `i `uc ]
+[; ;main.c: 133: totalDistTrav = (totalDistTrav + distTrav);
+"133
+[e = _totalDistTrav + _totalDistTrav _distTrav ]
+[; ;main.c: 134: lcdSetCursor(0x00);
+"134
+[e ( _lcdSetCursor (1 -> -> 0 `i `uc ]
+[; ;main.c: 135: lcdWriteToDigitBCD(totalDistTrav);
+"135
+[e ( _lcdWriteToDigitBCD (1 -> _totalDistTrav `ui ]
+"136
+}
+[e :U 119 ]
+"131
+[e $ < _totalDistTrav -> 4000 `i 120  ]
+[e :U 121 ]
+[; ;main.c: 136: }
+[; ;main.c: 139: DriveDirect(0,0);
+"139
+[e ( _DriveDirect (2 , -> 0 `i -> 0 `i ]
+"141
+}
+[e :U 115 ]
+[; ;main.c: 141: }
+[; ;main.c: 144: if (getSensorData(18,1) == 0b00000100){
+"144
+[e $ ! == ( _getSensorData (2 , -> -> 18 `i `uc -> -> 1 `i `uc -> 4 `i 122  ]
+{
+[; ;main.c: 146: initWallFollow();
+"146
+[e ( _initWallFollow ..  ]
+"178
+}
+[e :U 122 ]
+[; ;main.c: 178: }
+[; ;main.c: 186: if(getSensorData(18,1) == 0b00000101){
+"186
+[e $ ! == ( _getSensorData (2 , -> -> 18 `i `uc -> -> 1 `i `uc -> 5 `i 123  ]
+{
+"188
+[v _ADC_SET `ui ~T0 @X0 1 a ]
+[; ;main.c: 188: unsigned int ADC_SET = 250;
+[e = _ADC_SET -> -> 250 `i `ui ]
+"189
+[v _ADC_CURRENT `ui ~T0 @X0 1 a ]
+[; ;main.c: 189: unsigned int ADC_CURRENT = 0;
+[e = _ADC_CURRENT -> -> 0 `i `ui ]
+"190
+[v _ADC_ADJUST `ui ~T0 @X0 1 a ]
+[; ;main.c: 190: unsigned int ADC_ADJUST = 0;
+[e = _ADC_ADJUST -> -> 0 `i `ui ]
+"191
+[v _CURRENT_SPEED_L `ui ~T0 @X0 1 a ]
+[; ;main.c: 191: unsigned int CURRENT_SPEED_L = 0;
+[e = _CURRENT_SPEED_L -> -> 0 `i `ui ]
+"192
+[v _ADJUSTED_SPEED_L `ui ~T0 @X0 1 a ]
+[; ;main.c: 192: unsigned int ADJUSTED_SPEED_L = 0;
+[e = _ADJUSTED_SPEED_L -> -> 0 `i `ui ]
+"193
+[v _CURRENT_SPEED_R `ui ~T0 @X0 1 a ]
+[; ;main.c: 193: unsigned int CURRENT_SPEED_R = 0;
+[e = _CURRENT_SPEED_R -> -> 0 `i `ui ]
+"194
+[v _ADJUSTED_SPEED_R `ui ~T0 @X0 1 a ]
+[; ;main.c: 194: unsigned int ADJUSTED_SPEED_R = 0;
+[e = _ADJUSTED_SPEED_R -> -> 0 `i `ui ]
+"195
+[v _correctionFactor_R `ui ~T0 @X0 1 a ]
+[; ;main.c: 195: unsigned int correctionFactor_R = 0;
+[e = _correctionFactor_R -> -> 0 `i `ui ]
+"196
+[v _correctionFactor_L `ui ~T0 @X0 1 a ]
+[; ;main.c: 196: unsigned int correctionFactor_L = 0;
+[e = _correctionFactor_L -> -> 0 `i `ui ]
+[; ;main.c: 198: initWallFollow();
+"198
+[e ( _initWallFollow ..  ]
+[; ;main.c: 200: while(1){
+"200
+[e :U 125 ]
+{
+[; ;main.c: 201: ADCMain();
+"201
+[e ( _ADCMain ..  ]
+[; ;main.c: 202: DriveDirect(ADJUSTED_SPEED_R,ADJUSTED_SPEED_L);
+"202
+[e ( _DriveDirect (2 , -> _ADJUSTED_SPEED_R `i -> _ADJUSTED_SPEED_L `i ]
+[; ;main.c: 204: if (adcRAW > ADC_SET ) {
+"204
+[e $ ! > _adcRAW _ADC_SET 127  ]
+{
+[; ;main.c: 205: ADC_ADJUST = adcRAW - ADC_SET;
+"205
+[e = _ADC_ADJUST - _adcRAW _ADC_SET ]
+"206
+}
+[; ;main.c: 206: } else if(adcRAW < ADC_SET) {
+[e $U 128  ]
+[e :U 127 ]
+[e $ ! < _adcRAW _ADC_SET 129  ]
+{
+[; ;main.c: 207: ADC_ADJUST = ADC_SET - adcRAW;
+"207
+[e = _ADC_ADJUST - _ADC_SET _adcRAW ]
+"208
+}
+[; ;main.c: 208: } else if(adcRAW = ADC_SET){
+[e $U 130  ]
+[e :U 129 ]
+[e $ ! != = _adcRAW _ADC_SET -> -> 0 `i `Vui 131  ]
+{
+[; ;main.c: 209: ADC_ADJUST = 0;
+"209
+[e = _ADC_ADJUST -> -> 0 `i `ui ]
+"210
+}
+[e :U 131 ]
+"215
+[e :U 130 ]
+[e :U 128 ]
+}
+[e :U 124 ]
+"200
+[e $U 125  ]
+[e :U 126 ]
+"217
+}
+[e :U 123 ]
+"218
+}
+[e :U 112 ]
+"114
+[e $U 113  ]
+[e :U 114 ]
+[; ;main.c: 210: }
+[; ;main.c: 215: }
+[; ;main.c: 217: }
+[; ;main.c: 218: }
+[; ;main.c: 219: }
+"219
+[e :UE 111 ]
+}
+[a 1C 97 114 114 105 118 101 100 32 97 116 32 99 108 111 115 101 115 116 32 112 111 105 110 116 0 ]
+

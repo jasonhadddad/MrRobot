@@ -20,8 +20,6 @@ unsigned char PB8Counter = 0;
 char count = 0;
 
 
-
-
 // Interrupt service routine
 void interrupt isr(void){
 //Timer 1
@@ -32,7 +30,7 @@ void interrupt isr(void){
 
         if(time_count % 1 == 0) {
             //FLAG_10MS = 1;
-            SM_STEP();
+            
         }
 
         if(time_count % 1000 == 0){
@@ -66,6 +64,32 @@ void interrupt isr(void){
 }
 
 
+void initWallFollow(void){
+//find closest point
+        adcClosest = 0;
+        
+          for (loop = 0; loop < 400; loop++){           
+                moveCCW(1);
+                ADCMain();
+                
+             if (adcRAW > adcClosest){                
+                adcClosest = adcRAW;          
+                }
+            }       
+        
+        if(adcRAW != adcClosest){
+            DriveDirect(20,0);
+            ADCMain();  
+            
+        } else if((adcRAW-20) < adcClosest && (adcRAW+20) > adcClosest){
+            DriveDirect(20,0);
+            lcdWriteString("arrived at closest point");
+        } 
+        
+}
+
+
+
 void main(void){
 __delay_ms(5000);
 
@@ -83,36 +107,11 @@ __delay_ms(5000);
     __delay_ms(1000);
     ser_putch(132);     //Full mode
     __delay_ms(1000);
-    lcdWriteToDigitBCD(totalDistTrav);
+    
+    lcdWriteToDigitBCD(500);
     
    
     while(1){       
-        
-        //Rotates 360 and compares adcRAW at every half step.
-        //If it detects a closer object than the previous closest then it stores 
-        //the stepCount corresponding to that object.
-        if (PB8Counter >= 10 && PB8 == 0){
-            //Loops motor back to stepCount 0
-            while (stepCount < 0){
-                moveCCW();
-            }
-            
-            
-            adcClosest = 0;
-            for (loop = 0; loop < 400; loop++){           
-                moveCW();
-                ADCMain();
-                if (adcRAW > adcClosest){
-                    adcClosest = adcRAW;
-                    stepClosest = stepCount;              
-                }
-            }           
-            //Moves CCW until stepCount(initial -400) matches the step of the closest object
-            for (loop = stepCount; loop != stepClosest; loop++){
-                moveCCW();
-            } 
-            PB8Counter = 0;
-        }
 
        
         //Drive forward 4m straight line
@@ -128,7 +127,7 @@ __delay_ms(5000);
                 lcdWriteToDigitBCD(totalDistTrav);  
             }            
 
-            DriveDirect(0,250,0,250); //Drive, 250mm/s | 250mm/s
+            DriveDirect(250,250); //Drive, 250mm/s | 250mm/s
                 while (totalDistTrav < 4000){
                     distTrav = getSensorData(19,2);   //Distance packetID, 2 bytes expected
                     totalDistTrav = (totalDistTrav + distTrav);                    
@@ -142,9 +141,12 @@ __delay_ms(5000);
         }
         
         //Perform 'Square' manoeuvre
-        if (getSensorData(18,1) == 0b00000100){ //Advanced button pressed
+        if (getSensorData(18,1) == 0b00000100){ 
             
-            totalDistTrav = 0;  //Resets distance traveled
+            initWallFollow();
+            //Advanced button pressed
+            
+        /*    totalDistTrav = 0;  //Resets distance traveled
                 
                 for (loop = 0; loop < 4; loop++){   //Loop 4 times
                    
@@ -167,21 +169,52 @@ __delay_ms(5000);
                     }
                 
                     totalDistTrav = 0;    
-                    DriveDirect(0,0,0,0);
+                    Drive(0,0,0,0);
                 
                 }
             
             DriveDirect(0,0); //Drive, 0mm/s, straight (STOP) 
-               
+                 */
         }
         
-        //Do something when both buttons are pushed (wall follow)
+ 
+      
+        
+        
+        
+        
         if(getSensorData(18,1) == 0b00000101){  //Play and Advanced at the same time
+            //left wall follow (assuming fixed sensor position)
+            unsigned int ADC_SET = 250;
+            unsigned int ADC_CURRENT = 0;
+            unsigned int ADC_ADJUST = 0;
+            unsigned int CURRENT_SPEED_L = 0;
+            unsigned int ADJUSTED_SPEED_L = 0;
+            unsigned int CURRENT_SPEED_R = 0;
+            unsigned int ADJUSTED_SPEED_R = 0;
+            unsigned int correctionFactor_R = 0;
+            unsigned int correctionFactor_L = 0;
             
+            initWallFollow();
             
+            while(1){
+                ADCMain(); //get distance        
+                DriveDirect(ADJUSTED_SPEED_R,ADJUSTED_SPEED_L);
+               
+                if (adcRAW > ADC_SET ) {
+                    ADC_ADJUST = adcRAW - ADC_SET;
+                } else if(adcRAW < ADC_SET) {
+                     ADC_ADJUST = ADC_SET - adcRAW;
+                } else if(adcRAW = ADC_SET){
+                    ADC_ADJUST = 0;
+                }
+                
+                
             
-            
+                                      
         }
-        
+            
+    }
     }
 }
+

@@ -1447,10 +1447,7 @@ unsigned char lowByte = 0;
 signed int distTrav = 0;
 signed int totalDistTrav = 0;
 signed int angleTurned = 0;
-<<<<<<< HEAD
-=======
 signed int totalangleTurned = 0;
->>>>>>> origin/master
 
 # 17 "LCD.h"
 volatile unsigned int stepCountNeg = 0;
@@ -1483,11 +1480,8 @@ unsigned char speedL = 0;
 unsigned char radH = 0;
 unsigned char radL = 0;
 
-<<<<<<< HEAD
 unsigned int VelocityRight = 0;
 unsigned int VelocityLeft = 0;
-=======
->>>>>>> origin/master
 unsigned char RightSpeedH = 0;
 unsigned char RightSpeedL = 0;
 unsigned char LeftSpeedH = 0;
@@ -1505,11 +1499,7 @@ unsigned char ser_getch();
 
 void Drive(unsigned char speedH, unsigned char speedL, unsigned char radH, unsigned char radL);
 
-<<<<<<< HEAD
 void DriveDirect(signed int VelocityRight, signed int VelocityLeft);
-=======
-void DriveDirect(unsigned char RightSpeedH, unsigned char RightSpeedL, unsigned char LeftSpeedH, unsigned char LeftSpeedL);
->>>>>>> origin/master
 
 
 signed int getSensorData(unsigned char packetID, unsigned char bytes);
@@ -1528,11 +1518,10 @@ unsigned int getADC(void);
 unsigned int adcConvertMM(unsigned int);
 
 # 6 "motor.h"
-void moveCW(void);
-void moveCCW(void);
-
+void moveCW(unsigned int numberOfSteps);
+void moveCCW(unsigned int numberOfSteps);
+void scanRoutine();
 signed char stepCount = 0;
-char negativeFlag = 0;
 char currentStep = 0;
 
 # 9 "main.c"
@@ -1549,7 +1538,8 @@ unsigned char PB8Counter = 0;
 
 char count = 0;
 
-# 26
+
+
 void interrupt isr(void){
 
 if(TMR0IF){
@@ -1559,7 +1549,7 @@ time_count++;
 
 if(time_count % 1 == 0) {
 
-RC2 = 1; __nop(); RC2 = 0;;
+
 }
 
 if(time_count % 1000 == 0){
@@ -1575,9 +1565,35 @@ PB7Counter++;
 if (!RB2 == 1)
 PB6Counter++;
 
-# 65
+# 63
 }
 }
+
+
+void initWallFollow(void){
+
+adcClosest = 0;
+
+for (loop = 0; loop < 400; loop++){
+moveCCW(1);
+ADCMain();
+
+if (adcRAW > adcClosest){
+adcClosest = adcRAW;
+}
+}
+
+if(adcRAW != adcClosest){
+DriveDirect(20,0);
+ADCMain();
+
+} else if((adcRAW-20) < adcClosest && (adcRAW+20) > adcClosest){
+DriveDirect(20,0);
+lcdWriteString("arrived at closest point");
+}
+
+}
+
 
 
 void main(void){
@@ -1597,7 +1613,8 @@ ser_putch(128);
 _delay((unsigned long)((1000)*(20000000/4000.0)));
 ser_putch(132);
 _delay((unsigned long)((1000)*(20000000/4000.0)));
-lcdWriteToDigitBCD(totalDistTrav);
+
+lcdWriteToDigitBCD(500);
 
 
 while(1){
@@ -1605,121 +1622,65 @@ while(1){
 
 
 
-if (PB8Counter >= 10 && !RB0 == 0){
-<<<<<<< HEAD
-
-while (stepCount < 0){
-moveCCW();
-}
-
-
-=======
->>>>>>> origin/master
-adcClosest = 0;
-for (loop = 0; loop < 400; loop++){
-moveCW();
-ADCMain();
-if (adcRAW > adcClosest){
-adcClosest = adcRAW;
-stepClosest = stepCount;
-}
-}
-
-for (loop = stepCount; loop != stepClosest; loop++){
-moveCCW();
-}
-PB8Counter = 0;
-}
-
-
-
-
 if (getSensorData(18,1) == 0b00000001){
-<<<<<<< HEAD
 totalDistTrav = 0;
 DriveDirect(200,200);
-while (totalDistTrav < 3000){
+while (totalDistTrav < 2){
 distTrav = getSensorData(19,2);
 totalDistTrav = (totalDistTrav + distTrav);
 
-=======
-DriveDirect(0,250,0,250);
-while (totalDistTrav < 4000){
-distTrav = getSensorData(19,2);
-totalDistTrav = (totalDistTrav + distTrav);
->>>>>>> origin/master
 lcdSetCursor(0x00);
 lcdWriteToDigitBCD(totalDistTrav);
 }
 
-<<<<<<< HEAD
+DriveDirect(250,250);
+while (totalDistTrav < 4000){
+distTrav = getSensorData(19,2);
+totalDistTrav = (totalDistTrav + distTrav);
+lcdSetCursor(0x00);
+lcdWriteToDigitBCD(totalDistTrav);
+}
+
+
 DriveDirect(0,0);
-=======
-DriveDirect(0,0,0,0);
->>>>>>> origin/master
 
 }
 
 
 if (getSensorData(18,1) == 0b00000100){
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
-totalDistTrav = 0;
+initWallFollow();
 
-for (loop = 0; loop < 4; loop++){
-
-<<<<<<< HEAD
-
-Drive(0,250,0xFF,0xFF);
-while (angleTurned > -90){
-angleTurned = getSensorData(20,2);
+# 178
 }
 
-
-Drive(0,250,0x7F,0xFF);
-while (totalDistTrav < 1000){
-distTrav = getSensorData(19,2);
-totalDistTrav = (totalDistTrav + distTrav);
-
-=======
-while (totalangleTurned >= -85){
-Drive(0,250,0xFF,0xFF);
-angleTurned = getSensorData(20,2);
-totalangleTurned = (totalangleTurned + angleTurned);
-}
-
-totalangleTurned = 0;
-angleTurned = 0;
-
-Drive(0,250,0x7F,0xFF);
-
-while (totalDistTrav < 1000){
-distTrav = getSensorData(19,2);
-totalDistTrav = (totalDistTrav + distTrav);
->>>>>>> origin/master
-lcdSetCursor(0x00);
-lcdWriteToDigitBCD(totalDistTrav);
-}
-totalDistTrav = 0;
-<<<<<<< HEAD
-}
-
-DriveDirect(0,0);
-=======
-DriveDirect(0,0,0,0);
-
-}
-
-DriveDirect(0,0,0,0);
->>>>>>> origin/master
-
-}
-
-
+# 186
 if(getSensorData(18,1) == 0b00000101){
 
+unsigned int ADC_SET = 250;
+unsigned int ADC_CURRENT = 0;
+unsigned int ADC_ADJUST = 0;
+unsigned int CURRENT_SPEED_L = 0;
+unsigned int ADJUSTED_SPEED_L = 0;
+unsigned int CURRENT_SPEED_R = 0;
+unsigned int ADJUSTED_SPEED_R = 0;
+unsigned int correctionFactor_R = 0;
+unsigned int correctionFactor_L = 0;
+
+initWallFollow();
+
+while(1){
+ADCMain();
+DriveDirect(ADJUSTED_SPEED_R,ADJUSTED_SPEED_L);
+
+if (adcRAW > ADC_SET ) {
+ADC_ADJUST = adcRAW - ADC_SET;
+} else if(adcRAW < ADC_SET) {
+ADC_ADJUST = ADC_SET - adcRAW;
+} else if(adcRAW = ADC_SET){
+ADC_ADJUST = 0;
+}
+
 
 
 
@@ -1727,3 +1688,5 @@ if(getSensorData(18,1) == 0b00000101){
 
 }
 }
+}
+

@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>iRobot</name>
+            <name>iRobot_original</name>
             <creation-uuid>90fd389f-746f-4372-b73c-5437967465a4</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
