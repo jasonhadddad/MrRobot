@@ -18,6 +18,12 @@ unsigned char PB7Counter = 0;
 unsigned char PB8Counter = 0;
 
 char count = 0;
+            volatile bit wasRight = 0;
+
+        unsigned int localStepPos = 0;
+        char leftWall = 0;
+        char rightWall = 0;
+
 
 
 // Interrupt service routine
@@ -66,25 +72,30 @@ void interrupt isr(void){
 
 void initWallFollow(void){
 //find closest point
+    //assuming sensor initial position is facing west (north being forward direction)
         adcClosest = 0;
         
-          for (loop = 0; loop < 400; loop++){           
+        
+          for (loop = 0; loop < 1600; loop++){ 
+              
                 moveCCW(1);
                 ADCMain();
                 
-             if (adcRAW > adcClosest){                
-                adcClosest = adcRAW;          
+                if (loop < 400 || loop > 1200 && adcRAW > adcClosest){         //left wall                                 
+                        adcClosest = adcRAW; 
+                        leftWall = 1;
+                        rightWall = 0;
+                        localStepPos = loop;                   
+                }
+                
+                if (loop > 400 || loop < 1200 && adcRAW > adcClosest){         //right wall      
+                    adcClosest = adcRAW;
+                    leftWall = 1;
+                    rightWall = 1;
+                   // localStepPos = loop;      
                 }
             }       
         
-        if(adcRAW != adcClosest){
-            DriveDirect(20,0);
-            ADCMain();  
-            
-        } else if((adcRAW-20) < adcClosest && (adcRAW+20) > adcClosest){
-            DriveDirect(20,0);
-            lcdWriteString("arrived at closest point");
-        } 
         
 }
 
@@ -142,11 +153,15 @@ __delay_ms(5000);
         
         //Perform 'Square' manoeuvre
         if (getSensorData(18,1) == 0b00000100){ 
+     
             
-            initWallFollow();
+            
+            
+            
+            
             //Advanced button pressed
             
-        /*    totalDistTrav = 0;  //Resets distance traveled
+           totalDistTrav = 0;  //Resets distance traveled
                 
                 for (loop = 0; loop < 4; loop++){   //Loop 4 times
                    
@@ -173,8 +188,8 @@ __delay_ms(5000);
                 
                 }
             
-            DriveDirect(0,0); //Drive, 0mm/s, straight (STOP) 
-                 */
+            DriveDirect(0,0);
+                 
         }
         
  
@@ -185,36 +200,53 @@ __delay_ms(5000);
         
         if(getSensorData(18,1) == 0b00000101){  //Play and Advanced at the same time
             //left wall follow (assuming fixed sensor position)
-            unsigned int ADC_SET = 250;
+                
+                       
             unsigned int ADC_CURRENT = 0;
             unsigned int ADC_ADJUST = 0;
-            unsigned int CURRENT_SPEED_L = 0;
+            unsigned int CURRENT_SPEED_L = 90;
             unsigned int ADJUSTED_SPEED_L = 0;
-            unsigned int CURRENT_SPEED_R = 0;
+            unsigned int CURRENT_SPEED_R = 80;
             unsigned int ADJUSTED_SPEED_R = 0;
-            unsigned int correctionFactor_R = 0;
-            unsigned int correctionFactor_L = 0;
-            
-            initWallFollow();
-            
-            while(1){
-                ADCMain(); //get distance        
-                DriveDirect(ADJUSTED_SPEED_R,ADJUSTED_SPEED_L);
-               
-                if (adcRAW > ADC_SET ) {
-                    ADC_ADJUST = adcRAW - ADC_SET;
-                } else if(adcRAW < ADC_SET) {
-                     ADC_ADJUST = ADC_SET - adcRAW;
-                } else if(adcRAW = ADC_SET){
-                    ADC_ADJUST = 0;
-                }
+            unsigned int timerLoop = 0;
                 
-                
+ 
+        //if(leftWall = 1){//left wall follow    
+            unsigned int setADCdist = 250;
+            unsigned int safetyCount = 0;
+                    
+        for(timerLoop = 0; timerLoop < 1200; timerLoop++) {     // (600/5 = 120 loops) 
+                ADCMain();                                     //multiplied by 50ms delay = 6000ms                
+                                              //i.e. = 1min loop updating every 50 ms                
+                if(adcRAW > setADCdist){   
+                    while(adcRAW > setADCdist && safetyCount < 20){   
+                        ADCMain();
+                        ADC_ADJUST = adcRAW - setADCdist;
+                        ADJUSTED_SPEED_L = CURRENT_SPEED_L + (7/10)*ADC_ADJUST + (CURRENT_SPEED_L)/(ADC_ADJUST+10);
+                        DriveDirect(CURRENT_SPEED_R,ADJUSTED_SPEED_L);       //make right faster  
+                        __delay_ms(100);
+                        safetyCount++;
+                        }
+                       safetyCount = 0;
+                       wasRight != wasRight;          
+                } else if (adcRAW < setADCdist){
+                        while(adcRAW < setADCdist && safetyCount < 20){ 
+                        ADCMain();
+                        ADC_ADJUST = setADCdist - adcRAW;
+                        ADJUSTED_SPEED_R = CURRENT_SPEED_R + (7/10)*ADC_ADJUST + (CURRENT_SPEED_R)/(ADC_ADJUST+10);
+                        DriveDirect(ADJUSTED_SPEED_R,CURRENT_SPEED_L);       //make right faster  
+                        __delay_ms(100);   
+                        safetyCount++;
+                        }
+                       safetyCount = 0;
+                    }
+        }
+        }
             
                                       
         }
-            
+           
+    
     }
-    }
-}
+
 

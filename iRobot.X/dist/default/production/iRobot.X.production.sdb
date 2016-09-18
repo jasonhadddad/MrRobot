@@ -33,17 +33,13 @@
 [v _lcdWriteData lcdWriteData `(v  1 e 1 0 ]
 "31
 [v _lcdSetCursor lcdSetCursor `(v  1 e 1 0 ]
-"36
-[v _lcdWriteString lcdWriteString `(v  1 e 1 0 ]
 "42
 [v _lcdWriteToDigitBCD lcdWriteToDigitBCD `(v  1 e 1 0 ]
 "86
 [v _setupLCD setupLCD `(v  1 e 1 0 ]
-"24 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
+"30 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
-"67
-[v _initWallFollow initWallFollow `(v  1 e 1 0 ]
-"93
+"104
 [v _main main `(v  1 e 1 0 ]
 "45 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\motor.c
 [v _moveCCW moveCCW `(v  1 e 1 0 ]
@@ -53,6 +49,8 @@
 [v _ser_putch ser_putch `(v  1 e 1 0 ]
 "35
 [v _ser_getch ser_getch `(uc  1 e 1 0 ]
+"45
+[v _Drive Drive `(v  1 e 1 0 ]
 "54
 [v _DriveDirect DriveDirect `(v  1 e 1 0 ]
 "85
@@ -157,6 +155,14 @@
 [v _PB7Counter PB7Counter `uc  1 e 1 0 ]
 "18
 [v _PB8Counter PB8Counter `uc  1 e 1 0 ]
+"21
+[v _wasRight wasRight `VEb  1 e 0 0 ]
+"23
+[v _localStepPos localStepPos `ui  1 e 2 0 ]
+"24
+[v _leftWall leftWall `uc  1 e 1 0 ]
+"25
+[v _rightWall rightWall `uc  1 e 1 0 ]
 "31 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.h
 [v _adcClosest adcClosest `i  1 e 2 0 ]
 "32
@@ -167,6 +173,10 @@
 [v _distTrav distTrav `i  1 e 2 0 ]
 "35
 [v _totalDistTrav totalDistTrav `i  1 e 2 0 ]
+"36
+[v _angleTurned angleTurned `i  1 e 2 0 ]
+"37
+[v _totalangleTurned totalangleTurned `i  1 e 2 0 ]
 "4 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\motor.c
 [v _stepState stepState `VEui  1 e 2 0 ]
 "13 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\ser.h
@@ -177,30 +187,30 @@
 [v _LeftSpeedH LeftSpeedH `uc  1 e 1 0 ]
 "16
 [v _LeftSpeedL LeftSpeedL `uc  1 e 1 0 ]
-"93 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
+"104 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"188
-[v main@ADC_SET ADC_SET `ui  1 a 2 53 ]
-"194
-[v main@ADJUSTED_SPEED_R ADJUSTED_SPEED_R `ui  1 a 2 50 ]
-"192
-[v main@ADJUSTED_SPEED_L ADJUSTED_SPEED_L `ui  1 a 2 48 ]
-"190
-[v main@ADC_ADJUST ADC_ADJUST `ui  1 a 2 46 ]
-"196
-[v main@correctionFactor_L correctionFactor_L `ui  1 a 2 44 ]
-"195
-[v main@correctionFactor_R correctionFactor_R `ui  1 a 2 42 ]
-"193
-[v main@CURRENT_SPEED_R CURRENT_SPEED_R `ui  1 a 2 40 ]
-"191
-[v main@CURRENT_SPEED_L CURRENT_SPEED_L `ui  1 a 2 38 ]
-"189
-[v main@ADC_CURRENT ADC_CURRENT `ui  1 a 2 36 ]
-"100
-[v main@controlByte controlByte `uc  1 a 1 52 ]
-"219
+"215
+[v main@setADCdist setADCdist `ui  1 a 2 52 ]
+"206
+[v main@ADC_ADJUST ADC_ADJUST `ui  1 a 2 50 ]
+"216
+[v main@safetyCount safetyCount `ui  1 a 2 48 ]
+"209
+[v main@CURRENT_SPEED_R CURRENT_SPEED_R `ui  1 a 2 46 ]
+"207
+[v main@CURRENT_SPEED_L CURRENT_SPEED_L `ui  1 a 2 44 ]
+"211
+[v main@timerLoop timerLoop `ui  1 a 2 42 ]
+"210
+[v main@ADJUSTED_SPEED_R ADJUSTED_SPEED_R `ui  1 a 2 39 ]
+"208
+[v main@ADJUSTED_SPEED_L ADJUSTED_SPEED_L `ui  1 a 2 37 ]
+"205
+[v main@ADC_CURRENT ADC_CURRENT `ui  1 a 2 35 ]
+"111
+[v main@controlByte controlByte `uc  1 a 1 41 ]
+"250
 } 0
 "23 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\SPI.c
 [v _spi_transfer spi_transfer `(uc  1 e 1 0 ]
@@ -233,41 +243,55 @@
 {
 "28
 } 0
-"67 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
-[v _initWallFollow initWallFollow `(v  1 e 1 0 ]
+"85
+[v _getSensorData getSensorData `(i  1 e 2 0 ]
 {
-"89
+[v getSensorData@packetID packetID `uc  1 a 1 wreg ]
+"96
+[v getSensorData@sensor sensor `i  1 a 2 6 ]
+"85
+[v getSensorData@packetID packetID `uc  1 a 1 wreg ]
+[v getSensorData@bytes bytes `uc  1 p 1 2 ]
+[v getSensorData@packetID packetID `uc  1 a 1 8 ]
+"102
 } 0
-"45 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\motor.c
-[v _moveCCW moveCCW `(v  1 e 1 0 ]
+"35
+[v _ser_getch ser_getch `(uc  1 e 1 0 ]
 {
-"47
-[v moveCCW@i i `VEui  1 a 2 6 ]
-"48
-[v moveCCW@stepsRemaining stepsRemaining `VEui  1 a 2 4 ]
-"45
-[v moveCCW@numberOfSteps numberOfSteps `ui  1 p 2 0 ]
-"84
+"36
+[v ser_getch@rxbyte rxbyte `uc  1 a 1 1 ]
+"40
 } 0
-"36 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\LCD.c
-[v _lcdWriteString lcdWriteString `(v  1 e 1 0 ]
-{
-[v lcdWriteString@s s `*.24uc  1 a 1 wreg ]
-[v lcdWriteString@s s `*.24uc  1 a 1 wreg ]
-[v lcdWriteString@s s `*.24uc  1 a 1 4 ]
-"39
-} 0
-"54 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\ser.c
+"54
 [v _DriveDirect DriveDirect `(v  1 e 1 0 ]
 {
 "68
-[v DriveDirect@data_248 data `ui  1 a 2 8 ]
+[v DriveDirect@data_253 data `ui  1 a 2 8 ]
 "59
 [v DriveDirect@data data `ui  1 a 2 6 ]
 "54
 [v DriveDirect@VelocityRight VelocityRight `i  1 p 2 1 ]
 [v DriveDirect@VelocityLeft VelocityLeft `i  1 p 2 3 ]
 "81
+} 0
+"45
+[v _Drive Drive `(v  1 e 1 0 ]
+{
+[v Drive@speedH speedH `uc  1 a 1 wreg ]
+[v Drive@speedH speedH `uc  1 a 1 wreg ]
+[v Drive@speedL speedL `uc  1 p 1 1 ]
+[v Drive@radH radH `uc  1 p 1 2 ]
+[v Drive@radL radL `uc  1 p 1 3 ]
+[v Drive@speedH speedH `uc  1 a 1 4 ]
+"51
+} 0
+"30
+[v _ser_putch ser_putch `(v  1 e 1 0 ]
+{
+[v ser_putch@c c `uc  1 a 1 wreg ]
+[v ser_putch@c c `uc  1 a 1 wreg ]
+[v ser_putch@c c `uc  1 a 1 0 ]
+"33
 } 0
 "19 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\ADC.c
 [v _ADCMain ADCMain `(v  1 e 1 0 ]
@@ -357,37 +381,10 @@
 [v ___aldiv@dividend dividend `l  1 p 4 10 ]
 "42
 } 0
-"85 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\ser.c
-[v _getSensorData getSensorData `(i  1 e 2 0 ]
-{
-[v getSensorData@packetID packetID `uc  1 a 1 wreg ]
-"96
-[v getSensorData@sensor sensor `i  1 a 2 6 ]
-"85
-[v getSensorData@packetID packetID `uc  1 a 1 wreg ]
-[v getSensorData@bytes bytes `uc  1 p 1 2 ]
-[v getSensorData@packetID packetID `uc  1 a 1 8 ]
-"102
-} 0
-"30
-[v _ser_putch ser_putch `(v  1 e 1 0 ]
-{
-[v ser_putch@c c `uc  1 a 1 wreg ]
-[v ser_putch@c c `uc  1 a 1 wreg ]
-[v ser_putch@c c `uc  1 a 1 0 ]
-"33
-} 0
-"35
-[v _ser_getch ser_getch `(uc  1 e 1 0 ]
-{
-"36
-[v ser_getch@rxbyte rxbyte `uc  1 a 1 1 ]
-"40
-} 0
-"24 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
+"30 C:\Users\Jason\Desktop\MrRobot-master_orig\iRobot.X\main.c
 [v _isr isr `II(v  1 e 1 0 ]
 {
-"64
+"70
 } 0
 "6 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]

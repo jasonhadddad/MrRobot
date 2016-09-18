@@ -1537,6 +1537,12 @@ unsigned char PB7Counter = 0;
 unsigned char PB8Counter = 0;
 
 char count = 0;
+volatile bit wasRight = 0;
+
+unsigned int localStepPos = 0;
+char leftWall = 0;
+char rightWall = 0;
+
 
 
 
@@ -1565,32 +1571,37 @@ PB7Counter++;
 if (!RB2 == 1)
 PB6Counter++;
 
-# 63
+# 69
 }
 }
 
 
 void initWallFollow(void){
 
+
 adcClosest = 0;
 
-for (loop = 0; loop < 400; loop++){
+
+for (loop = 0; loop < 1600; loop++){
+
 moveCCW(1);
 ADCMain();
 
-if (adcRAW > adcClosest){
+if (loop < 400 || loop > 1200 && adcRAW > adcClosest){
 adcClosest = adcRAW;
+leftWall = 1;
+rightWall = 0;
+localStepPos = loop;
+}
+
+if (loop > 400 || loop < 1200 && adcRAW > adcClosest){
+adcClosest = adcRAW;
+leftWall = 1;
+rightWall = 1;
+
 }
 }
 
-if(adcRAW != adcClosest){
-DriveDirect(20,0);
-ADCMain();
-
-} else if((adcRAW-20) < adcClosest && (adcRAW+20) > adcClosest){
-DriveDirect(20,0);
-lcdWriteString("arrived at closest point");
-}
 
 }
 
@@ -1649,44 +1660,87 @@ DriveDirect(0,0);
 
 if (getSensorData(18,1) == 0b00000100){
 
-initWallFollow();
+# 164
+totalDistTrav = 0;
 
-# 178
+for (loop = 0; loop < 4; loop++){
+
+while (totalangleTurned >= -85){
+Drive(0,250,0xFF,0xFF);
+angleTurned = getSensorData(20,2);
+totalangleTurned = (totalangleTurned + angleTurned);
 }
 
-# 186
+totalangleTurned = 0;
+angleTurned = 0;
+
+Drive(0,250,0x7F,0xFF);
+
+while (totalDistTrav < 1000){
+distTrav = getSensorData(19,2);
+totalDistTrav = (totalDistTrav + distTrav);
+lcdSetCursor(0x00);
+lcdWriteToDigitBCD(totalDistTrav);
+}
+
+totalDistTrav = 0;
+Drive(0,0,0,0);
+
+}
+
+DriveDirect(0,0);
+
+}
+
+# 201
 if(getSensorData(18,1) == 0b00000101){
 
-unsigned int ADC_SET = 250;
+
+
 unsigned int ADC_CURRENT = 0;
 unsigned int ADC_ADJUST = 0;
-unsigned int CURRENT_SPEED_L = 0;
+unsigned int CURRENT_SPEED_L = 90;
 unsigned int ADJUSTED_SPEED_L = 0;
-unsigned int CURRENT_SPEED_R = 0;
+unsigned int CURRENT_SPEED_R = 80;
 unsigned int ADJUSTED_SPEED_R = 0;
-unsigned int correctionFactor_R = 0;
-unsigned int correctionFactor_L = 0;
+unsigned int timerLoop = 0;
 
-initWallFollow();
 
-while(1){
+
+unsigned int setADCdist = 250;
+unsigned int safetyCount = 0;
+
+for(timerLoop = 0; timerLoop < 1200; timerLoop++) {
 ADCMain();
-DriveDirect(ADJUSTED_SPEED_R,ADJUSTED_SPEED_L);
 
-if (adcRAW > ADC_SET ) {
-ADC_ADJUST = adcRAW - ADC_SET;
-} else if(adcRAW < ADC_SET) {
-ADC_ADJUST = ADC_SET - adcRAW;
-} else if(adcRAW = ADC_SET){
-ADC_ADJUST = 0;
+if(adcRAW > setADCdist){
+while(adcRAW > setADCdist && safetyCount < 20){
+ADCMain();
+ADC_ADJUST = adcRAW - setADCdist;
+ADJUSTED_SPEED_L = CURRENT_SPEED_L + (7/10)*ADC_ADJUST + (CURRENT_SPEED_L)/(ADC_ADJUST+10);
+DriveDirect(CURRENT_SPEED_R,ADJUSTED_SPEED_L);
+_delay((unsigned long)((100)*(20000000/4000.0)));
+safetyCount++;
+}
+safetyCount = 0;
+wasRight != wasRight;
+} else if (adcRAW < setADCdist){
+while(adcRAW < setADCdist && safetyCount < 20){
+ADCMain();
+ADC_ADJUST = setADCdist - adcRAW;
+ADJUSTED_SPEED_R = CURRENT_SPEED_R + (7/10)*ADC_ADJUST + (CURRENT_SPEED_R)/(ADC_ADJUST+10);
+DriveDirect(ADJUSTED_SPEED_R,CURRENT_SPEED_L);
+_delay((unsigned long)((100)*(20000000/4000.0)));
+safetyCount++;
+}
+safetyCount = 0;
+}
+}
 }
 
 
-
-
 }
 
-}
-}
+
 }
 
