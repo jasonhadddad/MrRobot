@@ -17,8 +17,7 @@ unsigned char PB6Counter = 0;
 unsigned char PB7Counter = 0;
 unsigned char PB8Counter = 0;
 
-char count = 0;
-            volatile bit wasRight = 0;
+        char count = 0;
 
         unsigned int localStepPos = 0;
         char leftWall = 0;
@@ -28,29 +27,33 @@ char count = 0;
 
 // Interrupt service routine
 void interrupt isr(void){
-//Timer 1
+    
     if(TMR0IF){
         TMR0IF = 0;
         TMR0 = TMR0_VAL;
         time_count++;
-
+        
+        
         if(time_count % 1 == 0) {
-            //FLAG_10MS = 1;
+                       
             
         }
 
-        if(time_count % 1000 == 0){
+        if(time_count % 500 == 0){
             RB4 = !RB4;     //Toggle LED           
             //    FLAG_1000MS = 1;	// Raise flag for 500ms
             time_count = 0;	// Clear time_count        
         }
         
-        if (PB8 == 1)
+        if (PB8 == 1){
             PB8Counter++;
-        if (PB7 == 1)
+        }
+        if (PB7 == 1){
             PB7Counter++;
-        if (PB6 == 1)
+        }
+        if (PB6 == 1){
             PB6Counter++;
+        }
         
   /*     if(getSensorData(18,1) == 0b00000001)
             FLAG_Play++;
@@ -74,12 +77,13 @@ void initWallFollow(void){
 //find closest point
     //assuming sensor initial position is facing west (north being forward direction)
         adcClosest = 0;
-        
-        
-          for (loop = 0; loop < 1600; loop++){ 
-              
-                moveCCW(1);
-                ADCMain();
+            setCCW();
+          for (loop = 0; loop < 400; loop++){ 
+
+              SM_STEP();
+              __delay_ms(20);
+            /*      moveCW();
+              ADCMain();
                 
                 if (loop < 400 || loop > 1200 && adcRAW > adcClosest){         //left wall                                 
                         adcClosest = adcRAW; 
@@ -93,7 +97,7 @@ void initWallFollow(void){
                     leftWall = 1;
                     rightWall = 1;
                    // localStepPos = loop;      
-                }
+                }*/
             }       
         
         
@@ -102,31 +106,33 @@ void initWallFollow(void){
 
 
 void main(void){
-__delay_ms(5000);
+__delay_ms(3000);
 
 //Initialise and setup
     setupSPI();
     ser_init();
     setupLCD();
     setupADC();
-    
+   
     unsigned char controlByte = 0b00001101;
     spi_transfer(controlByte);
+   
    
     __delay_ms(1000);
     ser_putch(128);     //Startup
     __delay_ms(1000);
     ser_putch(132);     //Full mode
     __delay_ms(1000);
-    
     lcdWriteToDigitBCD(500);
-    
-   
-    while(1){       
 
-       
+    while(1){       
         //Drive forward 4m straight line
 
+        if (PB8Counter >= 10 && PB8 == 0){
+            initWallFollow();
+            PB8Counter = 0;
+        }
+        
         if (getSensorData(18,1) == 0b00000001){ //Play button
             totalDistTrav = 0; 
             DriveDirect(200,200); //Drive, 250mm/s | 250mm/s
@@ -153,15 +159,12 @@ __delay_ms(5000);
         
         //Perform 'Square' manoeuvre
         if (getSensorData(18,1) == 0b00000100){ 
-     
+            initWallFollow();
+       /*   
+        
+           //Advanced button pressed
             
-            
-            
-            
-            
-            //Advanced button pressed
-            
-           totalDistTrav = 0;  //Resets distance traveled
+         totalDistTrav = 0;  //Resets distance traveled
                 
                 for (loop = 0; loop < 4; loop++){   //Loop 4 times
                    
@@ -189,9 +192,9 @@ __delay_ms(5000);
                 }
             
             DriveDirect(0,0);
-                 
-        }
-        
+        } 
+        */    
+        }         
  
       
         
@@ -199,9 +202,7 @@ __delay_ms(5000);
         
         
         if(getSensorData(18,1) == 0b00000101){  //Play and Advanced at the same time
-            //left wall follow (assuming fixed sensor position)
-                
-                       
+            //left wall follow (assuming fixed sensor position)      
             unsigned int ADC_CURRENT = 0;
             unsigned int ADC_ADJUST = 0;
             unsigned int CURRENT_SPEED_L = 90;
@@ -214,9 +215,11 @@ __delay_ms(5000);
         //if(leftWall = 1){//left wall follow    
             unsigned int setADCdist = 250;
             unsigned int safetyCount = 0;
-                    
+        
+        ADCMain();  
+        
         for(timerLoop = 0; timerLoop < 1200; timerLoop++) {     // (600/5 = 120 loops) 
-                ADCMain();                                     //multiplied by 50ms delay = 6000ms                
+                                    //multiplied by 50ms delay = 6000ms                
                                               //i.e. = 1min loop updating every 50 ms                
                 if(adcRAW > setADCdist){   
                     while(adcRAW > setADCdist && safetyCount < 20){   
@@ -228,7 +231,7 @@ __delay_ms(5000);
                         safetyCount++;
                         }
                        safetyCount = 0;
-                       wasRight != wasRight;          
+       
                 } else if (adcRAW < setADCdist){
                         while(adcRAW < setADCdist && safetyCount < 20){ 
                         ADCMain();

@@ -1128,48 +1128,48 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;SPI.c: 16: TMR0IE = 1;
 "16
 [e = _TMR0IE -> -> 1 `i `b ]
-[; ;SPI.c: 19: (GIE = 1);
-"19
+[; ;SPI.c: 18: (GIE = 1);
+"18
 [e = _GIE -> -> 1 `i `b ]
-[; ;SPI.c: 20: }
-"20
+[; ;SPI.c: 19: }
+"19
 [e :UE 96 ]
 }
-"23
+"22
 [v _spi_transfer `(uc ~T0 @X0 1 ef1`uc ]
 {
-[; ;SPI.c: 23: unsigned char spi_transfer(unsigned char data){
+[; ;SPI.c: 22: unsigned char spi_transfer(unsigned char data){
 [e :U _spi_transfer ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"24
+"23
 [v _temp `uc ~T0 @X0 1 a ]
-[; ;SPI.c: 24: unsigned char temp = 0;
+[; ;SPI.c: 23: unsigned char temp = 0;
 [e = _temp -> -> 0 `i `uc ]
-[; ;SPI.c: 26: SSPIF = 0;
-"26
+[; ;SPI.c: 25: SSPIF = 0;
+"25
 [e = _SSPIF -> -> 0 `i `b ]
-[; ;SPI.c: 27: SSPBUF = data;
-"27
+[; ;SPI.c: 26: SSPBUF = data;
+"26
 [e = _SSPBUF _data ]
-[; ;SPI.c: 29: while (SSPIF == 0);
-"29
+[; ;SPI.c: 28: while (SSPIF == 0);
+"28
 [e $U 98  ]
 [e :U 99 ]
 [e :U 98 ]
 [e $ == -> _SSPIF `i -> 0 `i 99  ]
 [e :U 100 ]
-[; ;SPI.c: 30: temp = SSPBUF;
-"30
+[; ;SPI.c: 29: temp = SSPBUF;
+"29
 [e = _temp _SSPBUF ]
-[; ;SPI.c: 31: SSPIF = 0;
-"31
+[; ;SPI.c: 30: SSPIF = 0;
+"30
 [e = _SSPIF -> -> 0 `i `b ]
-[; ;SPI.c: 33: return temp;
-"33
+[; ;SPI.c: 32: return temp;
+"32
 [e ) _temp ]
 [e $UE 97  ]
-[; ;SPI.c: 34: }
-"34
+[; ;SPI.c: 33: }
+"33
 [e :UE 97 ]
 }

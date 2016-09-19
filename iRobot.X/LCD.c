@@ -2,8 +2,8 @@
 #include "main.h"
 #include "LCD.h"
 
-
 //functions
+
 
 //write controls to LCD
 void lcdWriteControl(unsigned char databyte){
@@ -101,3 +101,4 @@ void setupLCD(void){
     lcdWriteControl(0b00000010); //entry mode setup
 
 }
+

@@ -18,7 +18,7 @@ volatile unsigned int stepCountNeg = 0;
 volatile unsigned int degrees = 0;
 
 //write current step count to LCD
-void lcdWriteStepCount(unsigned int stepCount);
+void lcdWriteStepCount(unsigned char stepCountLCD);
 
 //write controls to LCD
 void lcdWriteControl(unsigned char databyte);

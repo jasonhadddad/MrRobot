@@ -1463,7 +1463,7 @@ volatile unsigned int stepCountNeg = 0;
 volatile unsigned int degrees = 0;
 
 
-void lcdWriteStepCount(unsigned int stepCount);
+void lcdWriteStepCount(unsigned char stepCountLCD);
 
 
 void lcdWriteControl(unsigned char databyte);
@@ -1500,7 +1500,6 @@ void ADCMain(void){
 getADC();
 lcdSetCursor(0b10000000);
 lcdWriteToDigitBCD(adcRAW);
-
 adcConvertMM(adcRAW);
 }
 
@@ -1530,7 +1529,7 @@ default: adcRAW = adcRAW;
 return(adcRAW);
 }
 
-# 59
+# 58
 unsigned int adcConvertMM(unsigned int adcRAW){
 
 if (adcRAW < 517 && adcRAW >= 513)

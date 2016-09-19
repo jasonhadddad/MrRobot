@@ -1111,7 +1111,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `ui
 ]
 [; ;LCD.h: 18: volatile unsigned int degrees = 0;
-[; ;LCD.h: 21: void lcdWriteStepCount(unsigned int stepCount);
+[; ;LCD.h: 21: void lcdWriteStepCount(unsigned char stepCountLCD);
 [; ;LCD.h: 24: void lcdWriteControl(unsigned char databyte);
 [; ;LCD.h: 27: void lcdWriteData(unsigned char databyte);
 [; ;LCD.h: 30: void lcdSetCursor(unsigned char address);

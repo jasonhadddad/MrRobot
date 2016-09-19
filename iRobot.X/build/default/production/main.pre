@@ -1454,7 +1454,7 @@ volatile unsigned int stepCountNeg = 0;
 volatile unsigned int degrees = 0;
 
 
-void lcdWriteStepCount(unsigned int stepCount);
+void lcdWriteStepCount(unsigned char stepCountLCD);
 
 
 void lcdWriteControl(unsigned char databyte);
@@ -1518,11 +1518,8 @@ unsigned int getADC(void);
 unsigned int adcConvertMM(unsigned int);
 
 # 6 "motor.h"
-void moveCW(unsigned int numberOfSteps);
-void moveCCW(unsigned int numberOfSteps);
-void scanRoutine();
-signed char stepCount = 0;
-char currentStep = 0;
+void setCW();
+void setCCW();
 
 # 9 "main.c"
 volatile unsigned int time_count;
@@ -1537,7 +1534,6 @@ unsigned char PB7Counter = 0;
 unsigned char PB8Counter = 0;
 
 char count = 0;
-volatile bit wasRight = 0;
 
 unsigned int localStepPos = 0;
 char leftWall = 0;
@@ -1553,25 +1549,29 @@ TMR0IF = 0;
 TMR0 = 100;
 time_count++;
 
+
 if(time_count % 1 == 0) {
 
 
 }
 
-if(time_count % 1000 == 0){
+if(time_count % 500 == 0){
 RB4 = !RB4;
 
 time_count = 0;
 }
 
-if (!RB0 == 1)
+if (!RB0 == 1){
 PB8Counter++;
-if (!RB1 == 1)
+}
+if (!RB1 == 1){
 PB7Counter++;
-if (!RB2 == 1)
+}
+if (!RB2 == 1){
 PB6Counter++;
+}
 
-# 69
+# 72
 }
 }
 
@@ -1580,26 +1580,13 @@ void initWallFollow(void){
 
 
 adcClosest = 0;
+setCCW();
+for (loop = 0; loop < 400; loop++){
 
+RC2 = 1; __nop(); RC2 = 0;;
+_delay((unsigned long)((20)*(20000000/4000.0)));
 
-for (loop = 0; loop < 1600; loop++){
-
-moveCCW(1);
-ADCMain();
-
-if (loop < 400 || loop > 1200 && adcRAW > adcClosest){
-adcClosest = adcRAW;
-leftWall = 1;
-rightWall = 0;
-localStepPos = loop;
-}
-
-if (loop > 400 || loop < 1200 && adcRAW > adcClosest){
-adcClosest = adcRAW;
-leftWall = 1;
-rightWall = 1;
-
-}
+# 101
 }
 
 
@@ -1608,7 +1595,7 @@ rightWall = 1;
 
 
 void main(void){
-_delay((unsigned long)((5000)*(20000000/4000.0)));
+_delay((unsigned long)((3000)*(20000000/4000.0)));
 
 
 setupSPI();
@@ -1619,19 +1606,21 @@ setupADC();
 unsigned char controlByte = 0b00001101;
 spi_transfer(controlByte);
 
+
 _delay((unsigned long)((1000)*(20000000/4000.0)));
 ser_putch(128);
 _delay((unsigned long)((1000)*(20000000/4000.0)));
 ser_putch(132);
 _delay((unsigned long)((1000)*(20000000/4000.0)));
-
 lcdWriteToDigitBCD(500);
-
 
 while(1){
 
 
-
+if (PB8Counter >= 10 && !RB0 == 0){
+initWallFollow();
+PB8Counter = 0;
+}
 
 if (getSensorData(18,1) == 0b00000001){
 totalDistTrav = 0;
@@ -1659,43 +1648,13 @@ DriveDirect(0,0);
 
 
 if (getSensorData(18,1) == 0b00000100){
+initWallFollow();
 
-# 164
-totalDistTrav = 0;
-
-for (loop = 0; loop < 4; loop++){
-
-while (totalangleTurned >= -85){
-Drive(0,250,0xFF,0xFF);
-angleTurned = getSensorData(20,2);
-totalangleTurned = (totalangleTurned + angleTurned);
+# 197
 }
 
-totalangleTurned = 0;
-angleTurned = 0;
-
-Drive(0,250,0x7F,0xFF);
-
-while (totalDistTrav < 1000){
-distTrav = getSensorData(19,2);
-totalDistTrav = (totalDistTrav + distTrav);
-lcdSetCursor(0x00);
-lcdWriteToDigitBCD(totalDistTrav);
-}
-
-totalDistTrav = 0;
-Drive(0,0,0,0);
-
-}
-
-DriveDirect(0,0);
-
-}
-
-# 201
+# 204
 if(getSensorData(18,1) == 0b00000101){
-
-
 
 unsigned int ADC_CURRENT = 0;
 unsigned int ADC_ADJUST = 0;
@@ -1710,8 +1669,10 @@ unsigned int timerLoop = 0;
 unsigned int setADCdist = 250;
 unsigned int safetyCount = 0;
 
-for(timerLoop = 0; timerLoop < 1200; timerLoop++) {
 ADCMain();
+
+for(timerLoop = 0; timerLoop < 1200; timerLoop++) {
+
 
 if(adcRAW > setADCdist){
 while(adcRAW > setADCdist && safetyCount < 20){
@@ -1723,7 +1684,7 @@ _delay((unsigned long)((100)*(20000000/4000.0)));
 safetyCount++;
 }
 safetyCount = 0;
-wasRight != wasRight;
+
 } else if (adcRAW < setADCdist){
 while(adcRAW < setADCdist && safetyCount < 20){
 ADCMain();

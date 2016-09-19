@@ -1450,134 +1450,26 @@ signed int angleTurned = 0;
 signed int totalangleTurned = 0;
 
 # 6 "motor.h"
-void moveCW(unsigned int numberOfSteps);
-void moveCCW(unsigned int numberOfSteps);
-void scanRoutine();
-signed char stepCount = 0;
-char currentStep = 0;
+void setCW();
+void setCCW();
 
-# 4 "motor.c"
-volatile unsigned int stepState = 0;
+# 7 "spi.h"
+void setupSPI(void);
+unsigned char spi_transfer(unsigned char data);
 
-void moveCW(unsigned int numberOfSteps) {
+# 5 "motor.c"
+void setCW(void){
+RC0 = 1; RC1 = 1;;
+_delay((unsigned long)((100)*(20000000/4000.0)));
 
-volatile unsigned int i = 0;
-volatile unsigned int stepsRemaining = numberOfSteps;
-while (i < numberOfSteps) {
-if (stepState == 0) {
-PORTC = 0b00111100;
-}
-else if (stepState == 1) {
-PORTC = 0b00101110;
-}
-else if (stepState == 2) {
-PORTC = 0b00101011;
-}
-else if (stepState == 3) {
-PORTC = 0b00100111;
-}
-else if (stepState == 4) {
-PORTC = 0b00110101;
-}
-else if (stepState == 5) {
-PORTC = 0b00010111;
-}
-else if (stepState == 6) {
-PORTC = 0b00011011;
-}
-else if (stepState == 7) {
-PORTC = 0b00011110;
-}
-_delay((unsigned long)((5)*(20000000/4000.0)));
-
-i++;
-stepState++;
-if (stepState > 7) {
-stepState = 0;
-}
-}
+spi_transfer(0b00010010);
+_delay((unsigned long)((100)*(20000000/4000.0)));
 }
 
-void moveCCW(unsigned int numberOfSteps) {
-
-volatile unsigned int i = 0;
-volatile unsigned int stepsRemaining = numberOfSteps;
-while (i < numberOfSteps) {
-
-if (stepState == 0) {
-PORTC = 0b00111100;
-}
-else if (stepState == 1) {
-PORTC = 0b00101110;
-}
-else if (stepState == 2) {
-PORTC = 0b00101011;
-}
-else if (stepState == 3) {
-PORTC = 0b00100111;
-}
-else if (stepState == 4) {
-PORTC = 0b00110101;
-}
-else if (stepState == 5) {
-PORTC = 0b00010111;
-}
-else if (stepState == 6) {
-PORTC = 0b00011011;
-}
-else if (stepState == 7) {
-PORTC = 0b00011110;
-}
-_delay((unsigned long)((5)*(20000000/4000.0)));
-
-i++;
-if (stepState != 0){
-stepState--;
-} else {
-stepState = 7;
-}
-}
+void setCCW(void){
+RC0 = 1; RC1 = 1;;
+_delay((unsigned long)((100)*(20000000/4000.0)));
+spi_transfer(0b00010000);
+_delay((unsigned long)((100)*(20000000/4000.0)));
 }
 
-void scanRoutine(void){
-_delay((unsigned long)((1000)*(20000000/4000.0)));
-
-volatile unsigned int i = 0;
-while (i < 400) {
-
-if (stepState == 0) {
-PORTC = 0b00111100;
-}
-else if (stepState == 1) {
-PORTC = 0b00101110;
-}
-else if (stepState == 2) {
-PORTC = 0b00101011;
-}
-else if (stepState == 3) {
-PORTC = 0b00100111;
-}
-else if (stepState == 4) {
-PORTC = 0b00110101;
-}
-else if (stepState == 5) {
-PORTC = 0b00010111;
-}
-else if (stepState == 6) {
-PORTC = 0b00011011;
-}
-else if (stepState == 7) {
-PORTC = 0b00011110;
-}
-_delay((unsigned long)((5)*(20000000/4000.0)));
-
-i++;
-
-
-if (stepState != 0){
-stepState--;
-} else {
-stepState = 7;
-}
-}
-}

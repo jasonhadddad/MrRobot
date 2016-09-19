@@ -1133,7 +1133,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 0 `i `ui
 ]
 [; ;LCD.h: 18: volatile unsigned int degrees = 0;
-[; ;LCD.h: 21: void lcdWriteStepCount(unsigned int stepCount);
+[; ;LCD.h: 21: void lcdWriteStepCount(unsigned char stepCountLCD);
 [; ;LCD.h: 24: void lcdWriteControl(unsigned char databyte);
 [; ;LCD.h: 27: void lcdWriteData(unsigned char databyte);
 [; ;LCD.h: 30: void lcdSetCursor(unsigned char address);
@@ -1180,184 +1180,184 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;ADC.c: 23: lcdWriteToDigitBCD(adcRAW);
 "23
 [e ( _lcdWriteToDigitBCD (1 _adcRAW ]
-[; ;ADC.c: 25: adcConvertMM(adcRAW);
-"25
+[; ;ADC.c: 24: adcConvertMM(adcRAW);
+"24
 [e ( _adcConvertMM (1 _adcRAW ]
-[; ;ADC.c: 26: }
-"26
+[; ;ADC.c: 25: }
+"25
 [e :UE 97 ]
 }
-"29
+"28
 [v _getADC `(ui ~T0 @X0 1 ef ]
 {
-[; ;ADC.c: 29: unsigned int getADC(void){
+[; ;ADC.c: 28: unsigned int getADC(void){
 [e :U _getADC ]
 [f ]
-[; ;ADC.c: 31: ADRESH = 0;
-"31
+[; ;ADC.c: 30: ADRESH = 0;
+"30
 [e = _ADRESH -> -> 0 `i `uc ]
-[; ;ADC.c: 32: ADRESL = 0;
-"32
+[; ;ADC.c: 31: ADRESL = 0;
+"31
 [e = _ADRESL -> -> 0 `i `uc ]
-[; ;ADC.c: 34: GO = 1;
-"34
+[; ;ADC.c: 33: GO = 1;
+"33
 [e = _GO -> -> 1 `i `b ]
-[; ;ADC.c: 35: while(GO) continue;
-"35
+[; ;ADC.c: 34: while(GO) continue;
+"34
 [e $U 99  ]
 [e :U 100 ]
 [e $U 99  ]
 [e :U 99 ]
 [e $ _GO 100  ]
 [e :U 101 ]
-[; ;ADC.c: 39: adcRAW = (4*ADRESH);
-"39
+[; ;ADC.c: 38: adcRAW = (4*ADRESH);
+"38
 [e = _adcRAW -> * -> 4 `i -> _ADRESH `i `ui ]
-[; ;ADC.c: 41: switch(ADRESL){
-"41
+[; ;ADC.c: 40: switch(ADRESL){
+"40
 [e $U 103  ]
 {
-[; ;ADC.c: 42: case 0b01000000: adcRAW = adcRAW + 1;
-"42
+[; ;ADC.c: 41: case 0b01000000: adcRAW = adcRAW + 1;
+"41
 [e :U 104 ]
 [e = _adcRAW + _adcRAW -> -> 1 `i `ui ]
-[; ;ADC.c: 43: break;
-"43
+[; ;ADC.c: 42: break;
+"42
 [e $U 102  ]
-[; ;ADC.c: 44: case 0b10000000: adcRAW = adcRAW + 2;
-"44
+[; ;ADC.c: 43: case 0b10000000: adcRAW = adcRAW + 2;
+"43
 [e :U 105 ]
 [e = _adcRAW + _adcRAW -> -> 2 `i `ui ]
-[; ;ADC.c: 45: break;
-"45
+[; ;ADC.c: 44: break;
+"44
 [e $U 102  ]
-[; ;ADC.c: 46: case 0b11000000: adcRAW = adcRAW + 3;
-"46
+[; ;ADC.c: 45: case 0b11000000: adcRAW = adcRAW + 3;
+"45
 [e :U 106 ]
 [e = _adcRAW + _adcRAW -> -> 3 `i `ui ]
-[; ;ADC.c: 47: break;
-"47
+[; ;ADC.c: 46: break;
+"46
 [e $U 102  ]
-[; ;ADC.c: 48: default: adcRAW = adcRAW;
-"48
+[; ;ADC.c: 47: default: adcRAW = adcRAW;
+"47
 [e :U 107 ]
 [e = _adcRAW _adcRAW ]
-"49
+"48
 }
-[; ;ADC.c: 49: }
+[; ;ADC.c: 48: }
 [e $U 102  ]
-"41
+"40
 [e :U 103 ]
 [e [\ _ADRESL , $ -> -> 64 `i `uc 104
  , $ -> -> 128 `i `uc 105
  , $ -> -> 192 `i `uc 106
  107 ]
-"49
+"48
 [e :U 102 ]
-[; ;ADC.c: 51: return(adcRAW);
-"51
+[; ;ADC.c: 50: return(adcRAW);
+"50
 [e ) _adcRAW ]
 [e $UE 98  ]
-[; ;ADC.c: 52: }
-"52
+[; ;ADC.c: 51: }
+"51
 [e :UE 98 ]
 }
-"59
+"58
 [v _adcConvertMM `(ui ~T0 @X0 1 ef1`ui ]
 {
-[; ;ADC.c: 59: unsigned int adcConvertMM(unsigned int adcRAW){
+[; ;ADC.c: 58: unsigned int adcConvertMM(unsigned int adcRAW){
 [e :U _adcConvertMM ]
 [v _adcRAW `ui ~T0 @X0 1 r1 ]
 [f ]
-[; ;ADC.c: 61: if (adcRAW < 517 && adcRAW >= 513)
-"61
+[; ;ADC.c: 60: if (adcRAW < 517 && adcRAW >= 513)
+"60
 [e $ ! && < _adcRAW -> -> 517 `i `ui >= _adcRAW -> -> 513 `i `ui 109  ]
-[; ;ADC.c: 62: Distance = (((51700 - adcRAW*100)/4) + 100);
-"62
+[; ;ADC.c: 61: Distance = (((51700 - adcRAW*100)/4) + 100);
+"61
 [e = _Distance -> + / - -> 51700 `l -> * _adcRAW -> -> 100 `i `ui `l -> -> 4 `i `l -> -> 100 `i `l `ui ]
 [e :U 109 ]
-[; ;ADC.c: 64: if (adcRAW < 513 && adcRAW >= 393)
-"64
+[; ;ADC.c: 63: if (adcRAW < 513 && adcRAW >= 393)
+"63
 [e $ ! && < _adcRAW -> -> 513 `i `ui >= _adcRAW -> -> 393 `i `ui 110  ]
-[; ;ADC.c: 65: Distance = (((51300 - adcRAW*100)/120) + 200);
-"65
+[; ;ADC.c: 64: Distance = (((51300 - adcRAW*100)/120) + 200);
+"64
 [e = _Distance -> + / - -> 51300 `l -> * _adcRAW -> -> 100 `i `ui `l -> -> 120 `i `l -> -> 200 `i `l `ui ]
 [e :U 110 ]
-[; ;ADC.c: 67: if (adcRAW < 393 && adcRAW >= 298)
-"67
+[; ;ADC.c: 66: if (adcRAW < 393 && adcRAW >= 298)
+"66
 [e $ ! && < _adcRAW -> -> 393 `i `ui >= _adcRAW -> -> 298 `i `ui 111  ]
-[; ;ADC.c: 68: Distance = (((39300 - adcRAW*100)/95) + 300);
-"68
+[; ;ADC.c: 67: Distance = (((39300 - adcRAW*100)/95) + 300);
+"67
 [e = _Distance -> + / - -> 39300 `l -> * _adcRAW -> -> 100 `i `ui `l -> -> 95 `i `l -> -> 300 `i `l `ui ]
 [e :U 111 ]
-[; ;ADC.c: 70: if (adcRAW < 298 && adcRAW >= 236)
-"70
+[; ;ADC.c: 69: if (adcRAW < 298 && adcRAW >= 236)
+"69
 [e $ ! && < _adcRAW -> -> 298 `i `ui >= _adcRAW -> -> 236 `i `ui 112  ]
-[; ;ADC.c: 71: Distance = (((29800 - adcRAW*100)/62) + 400);
-"71
+[; ;ADC.c: 70: Distance = (((29800 - adcRAW*100)/62) + 400);
+"70
 [e = _Distance + / - -> -> 29800 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 62 `i `ui -> -> 400 `i `ui ]
 [e :U 112 ]
-[; ;ADC.c: 73: if (adcRAW < 236 && adcRAW >= 194)
-"73
+[; ;ADC.c: 72: if (adcRAW < 236 && adcRAW >= 194)
+"72
 [e $ ! && < _adcRAW -> -> 236 `i `ui >= _adcRAW -> -> 194 `i `ui 113  ]
-[; ;ADC.c: 74: Distance = (((23600 - adcRAW*100)/42) + 500);
-"74
+[; ;ADC.c: 73: Distance = (((23600 - adcRAW*100)/42) + 500);
+"73
 [e = _Distance + / - -> -> 23600 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 42 `i `ui -> -> 500 `i `ui ]
 [e :U 113 ]
-[; ;ADC.c: 76: if (adcRAW < 194 && adcRAW >= 168)
-"76
+[; ;ADC.c: 75: if (adcRAW < 194 && adcRAW >= 168)
+"75
 [e $ ! && < _adcRAW -> -> 194 `i `ui >= _adcRAW -> -> 168 `i `ui 114  ]
-[; ;ADC.c: 77: Distance = (((19400 - adcRAW*100)/26) + 600);
-"77
+[; ;ADC.c: 76: Distance = (((19400 - adcRAW*100)/26) + 600);
+"76
 [e = _Distance + / - -> -> 19400 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 26 `i `ui -> -> 600 `i `ui ]
 [e :U 114 ]
-[; ;ADC.c: 79: if (adcRAW < 168 && adcRAW >= 144)
-"79
+[; ;ADC.c: 78: if (adcRAW < 168 && adcRAW >= 144)
+"78
 [e $ ! && < _adcRAW -> -> 168 `i `ui >= _adcRAW -> -> 144 `i `ui 115  ]
-[; ;ADC.c: 80: Distance = (((16800 - adcRAW*100)/24) + 700);
-"80
+[; ;ADC.c: 79: Distance = (((16800 - adcRAW*100)/24) + 700);
+"79
 [e = _Distance + / - -> -> 16800 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 24 `i `ui -> -> 700 `i `ui ]
 [e :U 115 ]
-[; ;ADC.c: 82: if (adcRAW < 144 && adcRAW >= 129)
-"82
+[; ;ADC.c: 81: if (adcRAW < 144 && adcRAW >= 129)
+"81
 [e $ ! && < _adcRAW -> -> 144 `i `ui >= _adcRAW -> -> 129 `i `ui 116  ]
-[; ;ADC.c: 83: Distance = (((14400 - adcRAW*100)/15) + 800);
-"83
+[; ;ADC.c: 82: Distance = (((14400 - adcRAW*100)/15) + 800);
+"82
 [e = _Distance + / - -> -> 14400 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 15 `i `ui -> -> 800 `i `ui ]
 [e :U 116 ]
-[; ;ADC.c: 85: if (adcRAW < 129 && adcRAW >= 110)
-"85
+[; ;ADC.c: 84: if (adcRAW < 129 && adcRAW >= 110)
+"84
 [e $ ! && < _adcRAW -> -> 129 `i `ui >= _adcRAW -> -> 110 `i `ui 117  ]
-[; ;ADC.c: 86: Distance = (((12900 - adcRAW*100)/19) + 900 + 50);
-"86
+[; ;ADC.c: 85: Distance = (((12900 - adcRAW*100)/19) + 900 + 50);
+"85
 [e = _Distance + + / - -> -> 12900 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 19 `i `ui -> -> 900 `i `ui -> -> 50 `i `ui ]
 [e :U 117 ]
-[; ;ADC.c: 88: if (adcRAW < 110 && adcRAW >= 98)
-"88
+[; ;ADC.c: 87: if (adcRAW < 110 && adcRAW >= 98)
+"87
 [e $ ! && < _adcRAW -> -> 110 `i `ui >= _adcRAW -> -> 98 `i `ui 118  ]
-[; ;ADC.c: 89: Distance = (((11000 - adcRAW*100)/12) + 1000 + 100);
-"89
+[; ;ADC.c: 88: Distance = (((11000 - adcRAW*100)/12) + 1000 + 100);
+"88
 [e = _Distance + + / - -> -> 11000 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 12 `i `ui -> -> 1000 `i `ui -> -> 100 `i `ui ]
 [e :U 118 ]
-[; ;ADC.c: 91: if (adcRAW < 98 && adcRAW >= 90)
-"91
+[; ;ADC.c: 90: if (adcRAW < 98 && adcRAW >= 90)
+"90
 [e $ ! && < _adcRAW -> -> 98 `i `ui >= _adcRAW -> -> 90 `i `ui 119  ]
-[; ;ADC.c: 92: Distance = (((9800 - adcRAW*100)/8) + 1100 + 150);
-"92
+[; ;ADC.c: 91: Distance = (((9800 - adcRAW*100)/8) + 1100 + 150);
+"91
 [e = _Distance + + / - -> -> 9800 `i `ui * _adcRAW -> -> 100 `i `ui -> -> 8 `i `ui -> -> 1100 `i `ui -> -> 150 `i `ui ]
 [e :U 119 ]
-[; ;ADC.c: 94: if(adcRAW < 90 || adcRAW >= 517)
-"94
+[; ;ADC.c: 93: if(adcRAW < 90 || adcRAW >= 517)
+"93
 [e $ ! || < _adcRAW -> -> 90 `i `ui >= _adcRAW -> -> 517 `i `ui 120  ]
-[; ;ADC.c: 95: Distance = 0;
-"95
+[; ;ADC.c: 94: Distance = 0;
+"94
 [e = _Distance -> -> 0 `i `ui ]
 [e :U 120 ]
-[; ;ADC.c: 97: return(Distance);
-"97
+[; ;ADC.c: 96: return(Distance);
+"96
 [e ) _Distance ]
 [e $UE 108  ]
-[; ;ADC.c: 98: }
-"98
+[; ;ADC.c: 97: }
+"97
 [e :UE 108 ]
 }

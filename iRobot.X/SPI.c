@@ -14,7 +14,6 @@ void setupSPI(void){
     OPTION_REG = 0b00000100;
     //enable timer0 interrupt
     TMR0IE = 1;
-
     //Enable all interrupts
     ei();
 }

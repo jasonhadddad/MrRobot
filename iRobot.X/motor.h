@@ -3,11 +3,17 @@
 #ifndef MOTOR_H
 #define	MOTOR_H
 
-void moveCW(unsigned int numberOfSteps);
-void moveCCW(unsigned int numberOfSteps);
-void scanRoutine();
+void setCW();
+void setCCW();
+/*void moveCW(void);
+void moveCCW(void);
+
 signed char stepCount = 0;
+unsigned int StepCountLCD = 0;
+
+char negativeFlag = 0;
 char currentStep = 0;
+*/
 
 //Defines stepping sequence
 #define STEP0 0b00111100 

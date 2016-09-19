@@ -10,7 +10,7 @@ void setupADC(void){
     TRISA = 0b11111111;     //Set Port A to input
 
     //Set control registers
-    ADCON0 = 0b10001001;	//Fosc/32, Channel 1, ADC on
+    ADCON0 = 0b10001001;	//Fosc/32, Channel 0, ADC on
     ADCON1 = 0b00000010;	//left justified, PortE Digital, PortA Analogue
     
     __delay_us(50);         // Delay for ADC aquisition
@@ -21,7 +21,6 @@ void ADCMain(void){
         getADC();                   //Get rawADC value from sensor
         lcdSetCursor(0b10000000);   //First line, first position
         lcdWriteToDigitBCD(adcRAW); //Write the raw ADC value
-      
         adcConvertMM(adcRAW);       //Use Liam's conversion and sensor
 }
 
