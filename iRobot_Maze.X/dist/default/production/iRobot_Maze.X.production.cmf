@@ -1,0 +1,1393 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$dist/default/production\iRobot_Maze.X.production.obj
+cinit CODE 0 15 15 57 2
+text1 CODE 0 800 800 F 2
+text2 CODE 0 16B2 16B2 19 2
+text3 CODE 0 80F 80F 29 2
+text4 CODE 0 169C 169C 16 2
+text5 CODE 0 1619 1619 F 2
+text6 CODE 0 706 706 F2 2
+text7 CODE 0 5F1 5F1 115 2
+text8 CODE 0 9E5 9E5 A1 2
+text9 CODE 0 1734 1734 28 2
+text10 CODE 0 B8A B8A 112 2
+text11 CODE 0 A86 A86 104 2
+text12 CODE 0 16EB 16EB 23 2
+text13 CODE 0 17C2 17C2 3E 2
+text14 CODE 0 8BD 8BD 8D 2
+text15 CODE 0 1687 1687 15 2
+text16 CODE 0 94A 94A 9B 2
+text17 CODE 0 878 878 45 2
+text18 CODE 0 1784 1784 3E 2
+text19 CODE 0 160D 160D C 2
+text20 CODE 0 1603 1603 A 2
+text21 CODE 0 C9C C9C 364 2
+text22 CODE 0 16CB 16CB 20 2
+text23 CODE 0 164C 164C 13 2
+text24 CODE 0 15FA 15FA 9 2
+text25 CODE 0 165F 165F 14 2
+text26 CODE 0 1639 1639 13 2
+text27 CODE 0 170E 170E 26 2
+maintext CODE 0 6C 6C 585 2
+cstackCOMMON COMMON 1 72 72 5 1
+cstackBANK0 BANK0 1 20 20 2D 1
+cstackBANK1 BANK1 1 EA EA 6 1
+inittext CODE 0 1628 1628 11 2
+intentry CODE 0 4 4 E 2
+bitbssCOMMON COMMON 1 380 70 A 1
+bssBANK0 BANK0 1 4D 4D 1A 1
+bssBANK1 BANK1 1 A0 A0 36 1
+bssBANK3 BANK3 1 1B8 1B8 20 1
+idataBANK0 CODE 0 15F3 15F3 7 2
+idataBANK1 CODE 0 1673 1673 14 2
+idataBANK2 CODE 0 838 838 40 2
+idataBANK3 CODE 0 175C 175C 28 2
+strings STRING 0 1000 1000 11 2
+dataBANK0 BANK0 1 67 67 7 1
+dataBANK1 BANK1 1 D6 D6 14 1
+dataBANK2 BANK2 1 110 110 40 1
+dataBANK3 BANK3 1 190 190 28 1
+clrtext CODE 0 7F8 7F8 8 2
+bssCOMMON COMMON 1 77 77 3 1
+$C:\Users\Jason\AppData\Local\Temp\s47g.obj
+reset_vec CODE 0 0 0 3 2
+end_init CODE 0 12 12 3 2
+config CONFIG 0 2007 2007 1 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+RAM 6E-6F 1
+RAM 150-16F 1
+RAM 1D8-1EF 1
+BANK0 6E-6F 1
+BANK2 150-16F 1
+BANK3 1D8-1EF 1
+CONST 3-3 2
+CONST 1011-15F2 2
+CONST 1800-1FFF 2
+ENTRY 3-3 2
+ENTRY 1011-15F2 2
+ENTRY 1800-1FFF 2
+IDLOC 2000-2003 2
+STACK 150-16F 1
+CODE 3-3 2
+CODE 1011-15F2 2
+CODE 1800-1FFF 2
+SFR0 0-1F 1
+SFR1 80-9F 1
+SFR2 100-10F 1
+SFR3 180-18F 1
+COMMON 7A-7D 1
+EEDATA 2100-21FF 2
+STRCODE 3-3 2
+STRCODE 1011-15F2 2
+STRCODE 1800-1FFF 2
+STRING 3-3 2
+STRING 1011-15F2 2
+STRING 1800-1FFF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <address> <psect name> <class name> ><line number>:<file name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\iRobot_Maze.X.production.obj
+15 cinit CODE >1169:C:\Users\Jason\AppData\Local\Temp\s47g.
+15 cinit CODE >1172:C:\Users\Jason\AppData\Local\Temp\s47g.
+15 cinit CODE >1435:C:\Users\Jason\AppData\Local\Temp\s47g.
+16 cinit CODE >1436:C:\Users\Jason\AppData\Local\Temp\s47g.
+17 cinit CODE >1437:C:\Users\Jason\AppData\Local\Temp\s47g.
+18 cinit CODE >1438:C:\Users\Jason\AppData\Local\Temp\s47g.
+19 cinit CODE >1439:C:\Users\Jason\AppData\Local\Temp\s47g.
+1A cinit CODE >1440:C:\Users\Jason\AppData\Local\Temp\s47g.
+1B cinit CODE >1441:C:\Users\Jason\AppData\Local\Temp\s47g.
+1C cinit CODE >1442:C:\Users\Jason\AppData\Local\Temp\s47g.
+1D cinit CODE >1443:C:\Users\Jason\AppData\Local\Temp\s47g.
+1E cinit CODE >1444:C:\Users\Jason\AppData\Local\Temp\s47g.
+23 cinit CODE >1448:C:\Users\Jason\AppData\Local\Temp\s47g.
+24 cinit CODE >1449:C:\Users\Jason\AppData\Local\Temp\s47g.
+25 cinit CODE >1450:C:\Users\Jason\AppData\Local\Temp\s47g.
+26 cinit CODE >1451:C:\Users\Jason\AppData\Local\Temp\s47g.
+27 cinit CODE >1452:C:\Users\Jason\AppData\Local\Temp\s47g.
+28 cinit CODE >1453:C:\Users\Jason\AppData\Local\Temp\s47g.
+29 cinit CODE >1454:C:\Users\Jason\AppData\Local\Temp\s47g.
+2A cinit CODE >1455:C:\Users\Jason\AppData\Local\Temp\s47g.
+2B cinit CODE >1456:C:\Users\Jason\AppData\Local\Temp\s47g.
+30 cinit CODE >1460:C:\Users\Jason\AppData\Local\Temp\s47g.
+31 cinit CODE >1461:C:\Users\Jason\AppData\Local\Temp\s47g.
+32 cinit CODE >1462:C:\Users\Jason\AppData\Local\Temp\s47g.
+33 cinit CODE >1463:C:\Users\Jason\AppData\Local\Temp\s47g.
+34 cinit CODE >1464:C:\Users\Jason\AppData\Local\Temp\s47g.
+35 cinit CODE >1465:C:\Users\Jason\AppData\Local\Temp\s47g.
+36 cinit CODE >1466:C:\Users\Jason\AppData\Local\Temp\s47g.
+37 cinit CODE >1467:C:\Users\Jason\AppData\Local\Temp\s47g.
+38 cinit CODE >1468:C:\Users\Jason\AppData\Local\Temp\s47g.
+39 cinit CODE >1469:C:\Users\Jason\AppData\Local\Temp\s47g.
+3E cinit CODE >1473:C:\Users\Jason\AppData\Local\Temp\s47g.
+3F cinit CODE >1474:C:\Users\Jason\AppData\Local\Temp\s47g.
+40 cinit CODE >1475:C:\Users\Jason\AppData\Local\Temp\s47g.
+41 cinit CODE >1476:C:\Users\Jason\AppData\Local\Temp\s47g.
+42 cinit CODE >1477:C:\Users\Jason\AppData\Local\Temp\s47g.
+43 cinit CODE >1478:C:\Users\Jason\AppData\Local\Temp\s47g.
+44 cinit CODE >1479:C:\Users\Jason\AppData\Local\Temp\s47g.
+45 cinit CODE >1480:C:\Users\Jason\AppData\Local\Temp\s47g.
+46 cinit CODE >1481:C:\Users\Jason\AppData\Local\Temp\s47g.
+4B cinit CODE >1500:C:\Users\Jason\AppData\Local\Temp\s47g.
+4C cinit CODE >1501:C:\Users\Jason\AppData\Local\Temp\s47g.
+4D cinit CODE >1502:C:\Users\Jason\AppData\Local\Temp\s47g.
+4E cinit CODE >1503:C:\Users\Jason\AppData\Local\Temp\s47g.
+4F cinit CODE >1504:C:\Users\Jason\AppData\Local\Temp\s47g.
+54 cinit CODE >1507:C:\Users\Jason\AppData\Local\Temp\s47g.
+55 cinit CODE >1508:C:\Users\Jason\AppData\Local\Temp\s47g.
+56 cinit CODE >1509:C:\Users\Jason\AppData\Local\Temp\s47g.
+57 cinit CODE >1510:C:\Users\Jason\AppData\Local\Temp\s47g.
+58 cinit CODE >1511:C:\Users\Jason\AppData\Local\Temp\s47g.
+5D cinit CODE >1514:C:\Users\Jason\AppData\Local\Temp\s47g.
+5E cinit CODE >1515:C:\Users\Jason\AppData\Local\Temp\s47g.
+5F cinit CODE >1516:C:\Users\Jason\AppData\Local\Temp\s47g.
+60 cinit CODE >1517:C:\Users\Jason\AppData\Local\Temp\s47g.
+63 cinit CODE >1520:C:\Users\Jason\AppData\Local\Temp\s47g.
+64 cinit CODE >1521:C:\Users\Jason\AppData\Local\Temp\s47g.
+65 cinit CODE >1522:C:\Users\Jason\AppData\Local\Temp\s47g.
+66 cinit CODE >1525:C:\Users\Jason\AppData\Local\Temp\s47g.
+67 cinit CODE >1526:C:\Users\Jason\AppData\Local\Temp\s47g.
+68 cinit CODE >1532:C:\Users\Jason\AppData\Local\Temp\s47g.
+68 cinit CODE >1534:C:\Users\Jason\AppData\Local\Temp\s47g.
+69 cinit CODE >1535:C:\Users\Jason\AppData\Local\Temp\s47g.
+4 intentry CODE >504:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+170E text27 CODE >504:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+170E text27 CODE >505:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1710 text27 CODE >506:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1711 text27 CODE >507:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1713 text27 CODE >508:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+171B text27 CODE >510:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+171F text27 CODE >511:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1723 text27 CODE >512:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1725 text27 CODE >513:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1729 text27 CODE >515:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1639 text26 CODE >4:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+163C text26 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+163D text26 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+163F text26 CODE >44:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+1643 text26 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+1645 text26 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+1647 text26 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+164A text26 CODE >50:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul8.c
+165F text25 CODE >5:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1662 text25 CODE >6:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1663 text25 CODE >7:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1664 text25 CODE >8:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1665 text25 CODE >9:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1667 text25 CODE >10:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1668 text25 CODE >11:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1669 text25 CODE >12:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1672 text25 CODE >13:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+15FA text24 CODE >27:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+15FD text24 CODE >28:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+15FE text24 CODE >29:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1602 text24 CODE >30:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+164C text23 CODE >16:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+164F text23 CODE >17:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1650 text23 CODE >18:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1651 text23 CODE >19:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1652 text23 CODE >20:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1654 text23 CODE >21:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1655 text23 CODE >22:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1656 text23 CODE >23:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+165E text23 CODE >24:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+16CB text22 CODE >32:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+16CE text22 CODE >34:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+C9C text21 CODE >49:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C9F text21 CODE >57:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CB5 text21 CODE >59:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CB7 text21 CODE >60:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CBC text21 CODE >61:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CC1 text21 CODE >62:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CE9 text21 CODE >61:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CF1 text21 CODE >60:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CF9 text21 CODE >76:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CFD text21 CODE >77:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D02 text21 CODE >78:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D07 text21 CODE >79:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D19 text21 CODE >78:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D21 text21 CODE >77:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D29 text21 CODE >84:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D2D text21 CODE >85:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D31 text21 CODE >87:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D35 text21 CODE >88:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D39 text21 CODE >89:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D3D text21 CODE >91:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D3E text21 CODE >94:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D44 text21 CODE >95:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D4A text21 CODE >96:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D59 text21 CODE >98:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D5A text21 CODE >100:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D64 text21 CODE >101:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D6B text21 CODE >106:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D84 text21 CODE >107:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+D9F text21 CODE >108:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DBA text21 CODE >109:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DD5 text21 CODE >113:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DDB text21 CODE >115:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DDC text21 CODE >116:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DDD text21 CODE >117:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DDE text21 CODE >118:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DDF text21 CODE >119:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DE0 text21 CODE >120:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DE1 text21 CODE >121:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DE2 text21 CODE >123:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DE3 text21 CODE >114:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DF1 text21 CODE >128:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DFD text21 CODE >129:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E01 text21 CODE >130:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E05 text21 CODE >131:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E09 text21 CODE >137:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E0B text21 CODE >138:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E0D text21 CODE >139:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E0F text21 CODE >140:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E11 text21 CODE >141:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E13 text21 CODE >142:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E16 text21 CODE >143:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E18 text21 CODE >144:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E1C text21 CODE >145:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E1C text21 CODE >152:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E20 text21 CODE >153:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E24 text21 CODE >157:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E28 text21 CODE >158:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E2C text21 CODE >159:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E31 text21 CODE >160:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E36 text21 CODE >161:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E5C text21 CODE >160:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E64 text21 CODE >159:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E69 text21 CODE >171:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E7E text21 CODE >173:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E93 text21 CODE >175:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EA8 text21 CODE >177:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+ED1 text21 CODE >179:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+ED2 text21 CODE >170:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EE0 text21 CODE >182:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EE4 text21 CODE >183:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EE8 text21 CODE >184:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EEC text21 CODE >185:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EED text21 CODE >186:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EEE text21 CODE >189:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EF3 text21 CODE >190:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EF8 text21 CODE >191:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F0A text21 CODE >190:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F12 text21 CODE >189:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F1A text21 CODE >201:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F23 text21 CODE >205:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F38 text21 CODE >207:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F4D text21 CODE >209:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F62 text21 CODE >211:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F8B text21 CODE >213:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F8C text21 CODE >204:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F9A text21 CODE >216:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F9E text21 CODE >217:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FA2 text21 CODE >218:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FA6 text21 CODE >219:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FA7 text21 CODE >220:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FA8 text21 CODE >222:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FAD text21 CODE >223:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FB2 text21 CODE >224:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FC4 text21 CODE >223:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FCC text21 CODE >222:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FD4 text21 CODE >227:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FD4 text21 CODE >236:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FD6 text21 CODE >239:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FD8 text21 CODE >240:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FDA text21 CODE >241:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FDC text21 CODE >244:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FDE text21 CODE >245:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FE0 text21 CODE >246:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FE1 text21 CODE >247:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FE2 text21 CODE >249:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FE4 text21 CODE >250:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FE8 text21 CODE >251:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FEB text21 CODE >254:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FED text21 CODE >255:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FF1 text21 CODE >256:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FF5 text21 CODE >257:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FF9 text21 CODE >96:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FF9 text21 CODE >259:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1603 text20 CODE >35:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1603 text20 CODE >36:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1607 text20 CODE >37:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+160B text20 CODE >38:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+160D text19 CODE >30:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1610 text19 CODE >31:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1614 text19 CODE >32:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1618 text19 CODE >33:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1784 text18 CODE >85:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1787 text18 CODE >86:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+178D text18 CODE >87:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1795 text18 CODE >89:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+179B text18 CODE >90:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+17A6 text18 CODE >92:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+17A7 text18 CODE >94:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+17AF text18 CODE >96:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+17BD text18 CODE >98:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+878 text17 CODE >25:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+878 text17 CODE >27:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+87B text17 CODE >28:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+87E text17 CODE >30:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+881 text17 CODE >31:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+883 text17 CODE >35:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+890 text17 CODE >37:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+891 text17 CODE >38:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+89A text17 CODE >39:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+89B text17 CODE >40:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+8A4 text17 CODE >41:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+8A5 text17 CODE >42:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+8AE text17 CODE >45:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+8AF text17 CODE >37:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+8BC text17 CODE >48:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+94A text16 CODE >38:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+94A text16 CODE >42:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+950 text16 CODE >43:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+952 text16 CODE >44:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+954 text16 CODE >45:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+956 text16 CODE >46:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+958 text16 CODE >49:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+95F text16 CODE >50:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+967 text16 CODE >51:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+96D text16 CODE >49:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+96E text16 CODE >55:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+976 text16 CODE >56:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+97C text16 CODE >54:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+984 text16 CODE >60:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+98C text16 CODE >61:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+992 text16 CODE >59:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+99A text16 CODE >65:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9A2 text16 CODE >66:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9A8 text16 CODE >64:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9AF text16 CODE >69:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9B3 text16 CODE >70:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9BA text16 CODE >72:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9C0 text16 CODE >73:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9C7 text16 CODE >75:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9CD text16 CODE >76:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9D4 text16 CODE >79:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9DD text16 CODE >81:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+9E4 text16 CODE >83:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+1687 text15 CODE >16:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+1687 text15 CODE >18:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+168C text15 CODE >19:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+1692 text15 CODE >20:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+169B text15 CODE >22:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+8BD text14 CODE >54:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8BD text14 CODE >55:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8C0 text14 CODE >56:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8C1 text14 CODE >58:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8CC text14 CODE >59:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8D2 text14 CODE >60:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8DA text14 CODE >61:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8E2 text14 CODE >60:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8ED text14 CODE >64:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8F3 text14 CODE >67:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+8FE text14 CODE >68:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+904 text14 CODE >69:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+90C text14 CODE >70:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+914 text14 CODE >69:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+91F text14 CODE >73:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+925 text14 CODE >76:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+92B text14 CODE >77:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+933 text14 CODE >78:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+93B text14 CODE >79:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+943 text14 CODE >80:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+949 text14 CODE >81:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+17C2 text13 CODE >6:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17C2 text13 CODE >14:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17C6 text13 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17CA text13 CODE >16:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17CC text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17CE text13 CODE >18:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17D5 text13 CODE >19:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17D9 text13 CODE >17:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17DA text13 CODE >22:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17E1 text13 CODE >23:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17E9 text13 CODE >24:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17EF text13 CODE >25:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17F0 text13 CODE >27:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17F7 text13 CODE >28:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+17FB text13 CODE >30:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+16EB text12 CODE >15:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+16EB text12 CODE >43:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+16EF text12 CODE >45:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+16F1 text12 CODE >46:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+16F7 text12 CODE >47:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+16FE text12 CODE >48:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+1705 text12 CODE >49:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+1709 text12 CODE >52:C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+A86 text11 CODE >14:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A86 text11 CODE >16:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A8C text11 CODE >17:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A8D text11 CODE >18:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A92 text11 CODE >21:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+AA4 text11 CODE >23:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+AAF text11 CODE >27:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+AB8 text11 CODE >28:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+AC7 text11 CODE >30:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B02 text11 CODE >31:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B0E text11 CODE >33:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B0F text11 CODE >35:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B18 text11 CODE >37:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B27 text11 CODE >39:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B62 text11 CODE >40:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B6E text11 CODE >44:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B89 text11 CODE >45:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B8A text10 CODE >275:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B8A text10 CODE >283:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B8E text10 CODE >285:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B8F text10 CODE >286:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B90 text10 CODE >289:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B9D text10 CODE >291:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BA2 text10 CODE >293:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BB8 text10 CODE >294:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BC6 text10 CODE >296:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BD4 text10 CODE >299:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BDC text10 CODE >300:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BDD text10 CODE >302:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BDE text10 CODE >303:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BDE text10 CODE >305:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BDF text10 CODE >312:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BE0 text10 CODE >313:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BE1 text10 CODE >314:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BE5 text10 CODE >316:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+BE6 text10 CODE >302:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C00 text10 CODE >317:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C00 text10 CODE >319:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C02 text10 CODE >320:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C11 text10 CODE >321:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C15 text10 CODE >322:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C16 text10 CODE >323:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C1A text10 CODE >324:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C20 text10 CODE >326:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C26 text10 CODE >327:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C27 text10 CODE >328:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C2B text10 CODE >329:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C31 text10 CODE >330:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C37 text10 CODE >331:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C38 text10 CODE >333:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C39 text10 CODE >322:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C43 text10 CODE >333:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C43 text10 CODE >334:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C44 text10 CODE >337:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C51 text10 CODE >338:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C60 text10 CODE >289:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C61 text10 CODE >346:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C64 text10 CODE >348:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C68 text10 CODE >349:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C69 text10 CODE >350:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C6D text10 CODE >351:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C6E text10 CODE >352:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C72 text10 CODE >353:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C73 text10 CODE >354:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C75 text10 CODE >356:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C76 text10 CODE >347:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C86 text10 CODE >357:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C93 text10 CODE >363:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C95 text10 CODE >364:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1734 text9 CODE >45:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1737 text9 CODE >46:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+173D text9 CODE >47:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1745 text9 CODE >48:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+174D text9 CODE >49:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1755 text9 CODE >50:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+175B text9 CODE >51:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+9E5 text8 CODE >371:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9E8 text8 CODE >373:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9EA text8 CODE >375:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9ED text8 CODE >377:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9F0 text8 CODE >378:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9F5 text8 CODE >379:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9F7 text8 CODE >381:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A04 text8 CODE >382:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A0F text8 CODE >383:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A25 text8 CODE >382:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A26 text8 CODE >387:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A2B text8 CODE >389:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A2F text8 CODE >390:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A31 text8 CODE >391:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A35 text8 CODE >393:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A47 text8 CODE >394:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A52 text8 CODE >395:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A68 text8 CODE >394:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A69 text8 CODE >398:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A76 text8 CODE >399:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A85 text8 CODE >400:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5F1 text7 CODE >402:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5F1 text7 CODE >404:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5F9 text7 CODE >406:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+602 text7 CODE >408:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+608 text7 CODE >409:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+609 text7 CODE >410:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+60F text7 CODE >411:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+610 text7 CODE >412:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+616 text7 CODE >413:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+621 text7 CODE >414:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+627 text7 CODE >416:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+628 text7 CODE >407:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+635 text7 CODE >417:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+636 text7 CODE >420:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+641 text7 CODE >422:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+647 text7 CODE >423:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+648 text7 CODE >424:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+64E text7 CODE >425:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+64F text7 CODE >426:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+655 text7 CODE >427:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+660 text7 CODE >428:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+666 text7 CODE >430:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+667 text7 CODE >421:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+674 text7 CODE >431:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+675 text7 CODE >434:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+680 text7 CODE >436:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+686 text7 CODE >437:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+687 text7 CODE >438:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+68D text7 CODE >439:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+68E text7 CODE >440:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+694 text7 CODE >441:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+69F text7 CODE >442:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6A5 text7 CODE >444:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6A6 text7 CODE >435:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6B3 text7 CODE >445:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6B4 text7 CODE >448:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6BF text7 CODE >450:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6C5 text7 CODE >451:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6C6 text7 CODE >452:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6CC text7 CODE >453:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6CD text7 CODE >454:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6D3 text7 CODE >455:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6DE text7 CODE >456:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6E4 text7 CODE >458:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6E5 text7 CODE >449:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6F2 text7 CODE >459:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6F7 text7 CODE >463:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6F9 text7 CODE >464:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6FF text7 CODE >404:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+706 text6 CODE >469:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+706 text6 CODE >471:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+707 text6 CODE >472:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+708 text6 CODE >473:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+71F text6 CODE >475:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+734 text6 CODE >477:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+749 text6 CODE >479:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+772 text6 CODE >481:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+773 text6 CODE >472:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+783 text6 CODE >483:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+789 text6 CODE >484:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+78F text6 CODE >485:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+793 text6 CODE >486:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7A0 text6 CODE >487:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7AD text6 CODE >488:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7C3 text6 CODE >487:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7C4 text6 CODE >490:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7D1 text6 CODE >491:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7D2 text6 CODE >493:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7E1 text6 CODE >494:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7ED text6 CODE >496:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7F3 text6 CODE >497:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7F6 text6 CODE >499:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7F7 text6 CODE >500:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1619 text5 CODE >5:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1619 text5 CODE >7:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+161D text5 CODE >8:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1621 text5 CODE >24:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1625 text5 CODE >26:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1626 text5 CODE >27:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+1627 text5 CODE >28:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ser.c
+169C text4 CODE >5:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+169C text4 CODE >6:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+169F text4 CODE >7:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+16A3 text4 CODE >10:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+16A7 text4 CODE >11:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+16AB text4 CODE >13:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+16B1 text4 CODE >14:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\ADC.c
+80F text3 CODE >86:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+80F text3 CODE >88:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+813 text3 CODE >90:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+816 text3 CODE >91:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+817 text3 CODE >93:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+81A text3 CODE >94:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+81B text3 CODE >97:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+821 text3 CODE >98:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+827 text3 CODE >99:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+82D text3 CODE >100:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+833 text3 CODE >101:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+837 text3 CODE >103:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\LCD.c
+16B2 text2 CODE >4:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16B2 text2 CODE >6:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16B6 text2 CODE >8:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16B8 text2 CODE >9:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16BC text2 CODE >10:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16C0 text2 CODE >11:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16C4 text2 CODE >14:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16C8 text2 CODE >16:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16C9 text2 CODE >18:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+16CA text2 CODE >19:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+800 text1 CODE >22:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+803 text1 CODE >23:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+804 text1 CODE >25:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+805 text1 CODE >26:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+807 text1 CODE >28:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+809 text1 CODE >29:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+80D text1 CODE >30:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\SPI.c
+6C maintext CODE >517:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+6C maintext CODE >519:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7B maintext CODE >521:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+80 maintext CODE >522:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+85 maintext CODE >523:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+8A maintext CODE >524:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+8F maintext CODE >526:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+93 maintext CODE >527:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+97 maintext CODE >529:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+9D maintext CODE >530:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+A3 maintext CODE >532:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B2 maintext CODE >533:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+B8 maintext CODE >534:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+C7 maintext CODE >535:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+CD maintext CODE >536:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+DC maintext CODE >539:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E0 maintext CODE >540:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E1 maintext CODE >541:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+E5 maintext CODE >545:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+EB maintext CODE >546:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F1 maintext CODE >547:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+F7 maintext CODE >548:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+FD maintext CODE >549:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+103 maintext CODE >550:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+109 maintext CODE >551:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+10F maintext CODE >552:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+115 maintext CODE >553:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+11B maintext CODE >554:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+121 maintext CODE >555:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+127 maintext CODE >556:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+12D maintext CODE >557:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+133 maintext CODE >558:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+139 maintext CODE >559:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+13F maintext CODE >560:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+145 maintext CODE >561:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+14B maintext CODE >562:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+151 maintext CODE >563:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+157 maintext CODE >564:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+15D maintext CODE >565:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+163 maintext CODE >566:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+169 maintext CODE >567:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+16F maintext CODE >570:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+177 maintext CODE >571:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+17F maintext CODE >572:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+187 maintext CODE >573:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+18F maintext CODE >574:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+197 maintext CODE >578:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+19D maintext CODE >579:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1A3 maintext CODE >580:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1A9 maintext CODE >581:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1AF maintext CODE >582:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1B7 maintext CODE >583:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1BD maintext CODE >584:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1C5 maintext CODE >585:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1CB maintext CODE >586:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1D3 maintext CODE >587:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1D9 maintext CODE >588:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1E1 maintext CODE >589:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1E7 maintext CODE >590:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1EF maintext CODE >592:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1F5 maintext CODE >593:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+1FD maintext CODE >594:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+203 maintext CODE >595:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+20B maintext CODE >596:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+211 maintext CODE >597:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+219 maintext CODE >598:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+21F maintext CODE >599:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+227 maintext CODE >600:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+22D maintext CODE >601:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+235 maintext CODE >603:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+23B maintext CODE >604:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+243 maintext CODE >605:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+249 maintext CODE >606:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+251 maintext CODE >607:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+257 maintext CODE >608:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+25F maintext CODE >609:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+265 maintext CODE >610:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+26D maintext CODE >611:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+273 maintext CODE >612:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+27B maintext CODE >614:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+281 maintext CODE >615:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+287 maintext CODE >618:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+28D maintext CODE >619:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+293 maintext CODE >620:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+299 maintext CODE >621:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+29F maintext CODE >622:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2A5 maintext CODE >623:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2AB maintext CODE >624:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2B1 maintext CODE >625:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2B7 maintext CODE >626:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2BD maintext CODE >630:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2C3 maintext CODE >631:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2C9 maintext CODE >632:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2CF maintext CODE >633:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2D5 maintext CODE >634:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2DB maintext CODE >635:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2E1 maintext CODE >636:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2E7 maintext CODE >637:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2ED maintext CODE >638:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2F3 maintext CODE >639:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2F9 maintext CODE >640:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+2FF maintext CODE >641:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+305 maintext CODE >642:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+30B maintext CODE >643:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+311 maintext CODE >644:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+317 maintext CODE >645:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+31D maintext CODE >646:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+323 maintext CODE >647:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+329 maintext CODE >648:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+32F maintext CODE >649:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+335 maintext CODE >650:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+33B maintext CODE >651:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+341 maintext CODE >652:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+347 maintext CODE >653:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+34D maintext CODE >654:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+353 maintext CODE >657:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+359 maintext CODE >658:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+35F maintext CODE >659:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+365 maintext CODE >660:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+36B maintext CODE >661:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+371 maintext CODE >662:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+377 maintext CODE >663:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+37D maintext CODE >664:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+383 maintext CODE >665:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+389 maintext CODE >666:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+38F maintext CODE >667:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+395 maintext CODE >668:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+39B maintext CODE >669:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3A1 maintext CODE >670:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3A7 maintext CODE >671:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3AD maintext CODE >672:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3B3 maintext CODE >673:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3B9 maintext CODE >674:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3BF maintext CODE >675:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3C5 maintext CODE >676:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3CB maintext CODE >677:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3D1 maintext CODE >678:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3D7 maintext CODE >679:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3DD maintext CODE >680:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3E3 maintext CODE >681:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3E9 maintext CODE >686:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3F0 maintext CODE >689:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3F6 maintext CODE >690:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+3FC maintext CODE >691:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+40B maintext CODE >692:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+411 maintext CODE >693:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+417 maintext CODE >694:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+426 maintext CODE >695:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+42C maintext CODE >696:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+432 maintext CODE >701:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+435 maintext CODE >709:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+43A maintext CODE >713:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+441 maintext CODE >714:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+446 maintext CODE >716:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+448 maintext CODE >717:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+455 maintext CODE >718:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+463 maintext CODE >719:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+468 maintext CODE >720:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+46A maintext CODE >721:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+477 maintext CODE >722:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+485 maintext CODE >723:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+48E maintext CODE >724:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+493 maintext CODE >728:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+49C maintext CODE >729:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4A1 maintext CODE >730:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4A3 maintext CODE >731:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4B0 maintext CODE >732:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4BE maintext CODE >733:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4C3 maintext CODE >734:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4C5 maintext CODE >735:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4D2 maintext CODE >736:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4E0 maintext CODE >737:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4E9 maintext CODE >738:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4EE maintext CODE >742:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4FA maintext CODE >743:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+4FF maintext CODE >744:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+501 maintext CODE >745:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+506 maintext CODE >746:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+508 maintext CODE >747:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+515 maintext CODE >748:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+523 maintext CODE >749:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+52C maintext CODE >750:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+531 maintext CODE >754:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+53D maintext CODE >755:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+542 maintext CODE >756:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+544 maintext CODE >757:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+551 maintext CODE >758:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+55F maintext CODE >761:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+564 maintext CODE >762:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+566 maintext CODE >763:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+573 maintext CODE >764:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+581 maintext CODE >765:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+58A maintext CODE >766:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+58F maintext CODE >782:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+59B maintext CODE >783:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5A0 maintext CODE >784:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5A2 maintext CODE >785:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5AF maintext CODE >786:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5BD maintext CODE >789:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5C2 maintext CODE >790:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5C4 maintext CODE >791:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5D1 maintext CODE >792:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5DF maintext CODE >793:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5E8 maintext CODE >794:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5ED maintext CODE >798:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+5F0 maintext CODE >684:C:\Users\Jason\Desktop\iRobotMaze-liam\iRobot_Maze.X\main.c
+7F8 clrtext CODE >1487:C:\Users\Jason\AppData\Local\Temp\s47g.
+7F8 clrtext CODE >1488:C:\Users\Jason\AppData\Local\Temp\s47g.
+7F9 clrtext CODE >1489:C:\Users\Jason\AppData\Local\Temp\s47g.
+7F9 clrtext CODE >1490:C:\Users\Jason\AppData\Local\Temp\s47g.
+7FA clrtext CODE >1491:C:\Users\Jason\AppData\Local\Temp\s47g.
+7FB clrtext CODE >1492:C:\Users\Jason\AppData\Local\Temp\s47g.
+7FC clrtext CODE >1493:C:\Users\Jason\AppData\Local\Temp\s47g.
+7FD clrtext CODE >1494:C:\Users\Jason\AppData\Local\Temp\s47g.
+7FE clrtext CODE >1495:C:\Users\Jason\AppData\Local\Temp\s47g.
+7FF clrtext CODE >1496:C:\Users\Jason\AppData\Local\Temp\s47g.
+1628 inittext CODE >1409:C:\Users\Jason\AppData\Local\Temp\s47g.
+1628 inittext CODE >1410:C:\Users\Jason\AppData\Local\Temp\s47g.
+1629 inittext CODE >1411:C:\Users\Jason\AppData\Local\Temp\s47g.
+162A inittext CODE >1412:C:\Users\Jason\AppData\Local\Temp\s47g.
+162B inittext CODE >1413:C:\Users\Jason\AppData\Local\Temp\s47g.
+162C inittext CODE >1420:C:\Users\Jason\AppData\Local\Temp\s47g.
+162C inittext CODE >1421:C:\Users\Jason\AppData\Local\Temp\s47g.
+162F inittext CODE >1422:C:\Users\Jason\AppData\Local\Temp\s47g.
+1630 inittext CODE >1423:C:\Users\Jason\AppData\Local\Temp\s47g.
+1631 inittext CODE >1424:C:\Users\Jason\AppData\Local\Temp\s47g.
+1632 inittext CODE >1425:C:\Users\Jason\AppData\Local\Temp\s47g.
+1633 inittext CODE >1426:C:\Users\Jason\AppData\Local\Temp\s47g.
+1634 inittext CODE >1427:C:\Users\Jason\AppData\Local\Temp\s47g.
+1635 inittext CODE >1428:C:\Users\Jason\AppData\Local\Temp\s47g.
+1636 inittext CODE >1429:C:\Users\Jason\AppData\Local\Temp\s47g.
+1637 inittext CODE >1430:C:\Users\Jason\AppData\Local\Temp\s47g.
+1638 inittext CODE >1431:C:\Users\Jason\AppData\Local\Temp\s47g.
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+_c 59 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_r 5E 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_x 69 0 BANK0 1 dataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_y 63 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+___latbits 2 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_TravelPath 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__LdataBANK0 0 0 ABS 0 dataBANK0 -
+__LdataBANK1 0 0 ABS 0 dataBANK1 -
+__LdataBANK2 0 0 ABS 0 dataBANK2 -
+__LdataBANK3 0 0 ABS 0 dataBANK3 -
+__Hspace_0 2008 0 ABS 0 - -
+__Hspace_1 38A 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Hspace_3 0 0 ABS 0 - -
+__HidataBANK0 0 0 ABS 0 idataBANK0 -
+__HidataBANK1 0 0 ABS 0 idataBANK1 -
+__HidataBANK2 0 0 ABS 0 idataBANK2 -
+__HidataBANK3 0 0 ABS 0 idataBANK3 -
+lcdWriteToDigitBCD@data 23 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_pathCountShortest 68 0 BANK0 1 dataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+_pathCount 5D 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_GO FA 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_up 389 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+ltemp0 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ltemp1 82 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ltemp2 86 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ltemp3 80 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_targets_found 388 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+_PEIE 5E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RCIF 65 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TMR0 1 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TRMT 4C1 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Jason\AppData\Local\Temp\s47g.obj
+_down 381 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+_left 383 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+_loop CA 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+_main D8 0 CODE 0 maintext dist/default/production\iRobot_Maze.X.production.obj
+_path 1B8 0 BANK3 1 bssBANK3 dist/default/production\iRobot_Maze.X.production.obj
+btemp 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ltemp 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+start 24 0 CODE 0 init C:\Users\Jason\AppData\Local\Temp\s47g.obj
+ttemp 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_main 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of___lwdiv 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+?___wmul 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_PathTo 2000 0 CODE 0 text21 dist/default/production\iRobot_Maze.X.production.obj
+lcdWriteControl@databyte 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__LidataBANK0 0 0 ABS 0 idataBANK0 -
+__LidataBANK1 0 0 ABS 0 idataBANK1 -
+__LidataBANK2 0 0 ABS 0 idataBANK2 -
+__LidataBANK3 0 0 ABS 0 idataBANK3 -
+__size_of_DriveDirect 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__end_of_lcdWriteToDigitBCD 13CA 0 CODE 0 text16 dist/default/production\iRobot_Maze.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__pbitbssCOMMON 380 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+_distance 51 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_lcdWriteString 2D96 0 CODE 0 text22 dist/default/production\iRobot_Maze.X.production.obj
+_getSensorData 2F08 0 CODE 0 text18 dist/default/production\iRobot_Maze.X.production.obj
+ttemp0 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ttemp1 81 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ttemp2 84 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ttemp3 87 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+ttemp4 7F 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_Drive1m 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_lcdWriteControl 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__end_of_Turn90 150C 0 CODE 0 text8 dist/default/production\iRobot_Maze.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Jason\AppData\Local\Temp\s47g.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Jason\AppData\Local\Temp\s47g.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Jason\AppData\Local\Temp\s47g.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Jason\AppData\Local\Temp\s47g.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Jason\AppData\Local\Temp\s47g.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Jason\AppData\Local\Temp\s47g.obj
+_lcdWriteData 2C98 0 CODE 0 text23 dist/default/production\iRobot_Maze.X.production.obj
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+___bmul@multiplicand 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+getSensorData@packetID 26 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp1 80 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp2 82 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp3 84 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp4 86 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp5 88 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+wtemp6 7F 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__Hfunctab 0 0 CODE 0 functab -
+__Hclrtext 0 0 ABS 0 clrtext -
+_leftWall 384 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+PathTo@loop 43 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_lcdSetCursor 2BF4 0 CODE 0 text24 dist/default/production\iRobot_Maze.X.production.obj
+DriveDirect@data_485 28 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+___wmul@multiplicand 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_lcdWriteToDigitBCD 1294 0 CODE 0 text16 dist/default/production\iRobot_Maze.X.production.obj
+_ADCON0 1F 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_ADCON1 9F 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_ADRESH 1E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_ADRESL 9E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+main@controlByte EA 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__end_of___bmul 2C98 0 CODE 0 text26 dist/default/production\iRobot_Maze.X.production.obj
+__end_of___wmul 2E1C 0 CODE 0 text12 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_lcdWriteString 2DD6 0 CODE 0 text22 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_lcdWriteData 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__Lmaintext 0 0 ABS 0 maintext -
+_wallFollow 150C 0 CODE 0 text11 dist/default/production\iRobot_Maze.X.production.obj
+___bmul@multiplier 23 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of___lwdiv 3000 0 CODE 0 text13 dist/default/production\iRobot_Maze.X.production.obj
+_OPTION_REG 81 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_lcdSetCursor 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_Drive 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_orientation 67 0 BANK0 1 dataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+___lwdiv@quotient 26 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_gridWalls 110 0 BANK2 1 dataBANK2 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_getADC 117A 0 CODE 0 text17 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_lcdWriteData 2CBE 0 CODE 0 text23 dist/default/production\iRobot_Maze.X.production.obj
+wallFollow@setADCdist 33 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_Drive1m 1938 0 CODE 0 text10 dist/default/production\iRobot_Maze.X.production.obj
+start_initialization 2A 0 CODE 0 cinit dist/default/production\iRobot_Maze.X.production.obj
+__size_of_getSensorData 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_PathTo 1938 0 CODE 0 text21 dist/default/production\iRobot_Maze.X.production.obj
+_ADCMain 2D0E 0 CODE 0 text15 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_lcdSetCursor 2C06 0 CODE 0 text24 dist/default/production\iRobot_Maze.X.production.obj
+_spi_transfer 1000 0 CODE 0 text1 dist/default/production\iRobot_Maze.X.production.obj
+lcdWriteToDigitBCD@TensDigit 25 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+clear_ram0 FF0 0 CODE 0 clrtext dist/default/production\iRobot_Maze.X.production.obj
+__pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__pcstackBANK1 EA 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+_SSPBUF 13 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_SSPCON 14 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__end_of_ser_getch 2C1A 0 CODE 0 text20 dist/default/production\iRobot_Maze.X.production.obj
+_TMR0IE 5D 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TMR0IF 5A 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__end_of_ser_putch 2C32 0 CODE 0 text19 dist/default/production\iRobot_Maze.X.production.obj
+_LeftSpeedH 53 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_LeftSpeedL 54 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_wallFollow 1714 0 CODE 0 text11 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_ser_getch 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_ser_putch 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_Turn90 13CA 0 CODE 0 text8 dist/default/production\iRobot_Maze.X.production.obj
+DriveDirect@VelocityLeft 23 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_ADC_ADJUST 4D 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_getSensorData 2F84 0 CODE 0 text18 dist/default/production\iRobot_Maze.X.production.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Jason\AppData\Local\Temp\s47g.obj
+_RightSpeedH 57 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_RightSpeedL 58 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 ABS 0 bank3 -
+__Hcinit D8 0 CODE 0 cinit -
+Turn90@direction 2D 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Hidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__stringbase 200A 0 STRING 0 strings dist/default/production\iRobot_Maze.X.production.obj
+___lwdiv@counter 25 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+_ser_getch 2C06 0 CODE 0 text20 dist/default/production\iRobot_Maze.X.production.obj
+_ser_putch 2C1A 0 CODE 0 text19 dist/default/production\iRobot_Maze.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Hconfig 4010 0 CONFIG 0 config -
+_DriveDirect 117A 0 CODE 0 text14 dist/default/production\iRobot_Maze.X.production.obj
+getSensorData@sensor 27 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_PathTo 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__Lbank0 0 0 ABS 0 bank0 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Lbank3 0 0 ABS 0 bank3 -
+__Lcinit 2A 0 CODE 0 cinit -
+lcdWriteToDigitBCD@ThouDigit 29 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Lidloc 0 0 IDLOC 0 idloc -
+__size_of_spi_transfer 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__Lstack 0 0 STACK 2 stack -
+PathTo@mazeGrid 2D 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Linittext 0 0 ABS 0 inittext -
+TravelPath@n 3C 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Hcode 0 0 ABS 0 code -
+__Hinit 24 0 CODE 0 init -
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Htext 0 0 ABS 0 text -
+__Labs1 0 0 ABS 0 abs1 -
+__Lcode 0 0 ABS 0 code -
+__Linit 24 0 CODE 0 init -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Ltext 0 0 ABS 0 text -
+___bmul 2C72 0 CODE 0 text26 dist/default/production\iRobot_Maze.X.production.obj
+___wmul 2DD6 0 CODE 0 text12 dist/default/production\iRobot_Maze.X.production.obj
+__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+Drive@radH 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+Drive@radL 23 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+_routing 387 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+__size_of_Turn90 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_GIE 5F 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RB0 30 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RB1 31 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RB2 32 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RB3 33 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RC2 3A 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RE0 48 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RE1 49 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RE2 4A 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__S0 2008 0 ABS 0 - -
+__S1 1D8 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+_isr 2E1C 0 CODE 0 text27 dist/default/production\iRobot_Maze.X.production.obj
+_y_target D5 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+_adcRAW 4F 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_spi_transfer 101E 0 CODE 0 text1 dist/default/production\iRobot_Maze.X.production.obj
+saved_w 7E 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_re_route 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+lcdWriteData@databyte 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_isr 2E68 0 CODE 0 text27 dist/default/production\iRobot_Maze.X.production.obj
+_getADC 10F0 0 CODE 0 text17 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_lcdWriteToDigitBCD 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_homeBase 382 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+__Lintentry 8 0 CODE 0 intentry -
+__stringtab 2000 0 STRING 0 strings dist/default/production\iRobot_Maze.X.production.obj
+_CURRENT_SPEED_L 6A 0 BANK0 1 dataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_CURRENT_SPEED_R 6C 0 BANK0 1 dataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_TravelPath BE2 0 CODE 0 text7 dist/default/production\iRobot_Maze.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Jason\AppData\Local\Temp\s47g.obj
+_x_target D4 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__pdataBANK0 67 0 BANK0 1 dataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__pdataBANK1 D6 0 BANK1 1 dataBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__pdataBANK2 110 0 BANK2 1 dataBANK2 dist/default/production\iRobot_Maze.X.production.obj
+__pdataBANK3 190 0 BANK3 1 dataBANK3 dist/default/production\iRobot_Maze.X.production.obj
+_PB8Counter 56 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__size_of___bmul 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of___wmul 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__LbssBANK0 0 0 ABS 0 bssBANK0 -
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
+__LbssBANK3 0 0 ABS 0 bssBANK3 -
+__ptext10 1714 0 CODE 0 text10 dist/default/production\iRobot_Maze.X.production.obj
+__ptext11 150C 0 CODE 0 text11 dist/default/production\iRobot_Maze.X.production.obj
+__ptext12 2DD6 0 CODE 0 text12 dist/default/production\iRobot_Maze.X.production.obj
+__ptext13 2F84 0 CODE 0 text13 dist/default/production\iRobot_Maze.X.production.obj
+__ptext14 117A 0 CODE 0 text14 dist/default/production\iRobot_Maze.X.production.obj
+__ptext15 2D0E 0 CODE 0 text15 dist/default/production\iRobot_Maze.X.production.obj
+__ptext16 1294 0 CODE 0 text16 dist/default/production\iRobot_Maze.X.production.obj
+__ptext17 10F0 0 CODE 0 text17 dist/default/production\iRobot_Maze.X.production.obj
+__ptext18 2F08 0 CODE 0 text18 dist/default/production\iRobot_Maze.X.production.obj
+__ptext19 2C1A 0 CODE 0 text19 dist/default/production\iRobot_Maze.X.production.obj
+__ptext20 2C06 0 CODE 0 text20 dist/default/production\iRobot_Maze.X.production.obj
+__ptext21 1938 0 CODE 0 text21 dist/default/production\iRobot_Maze.X.production.obj
+__ptext22 2D96 0 CODE 0 text22 dist/default/production\iRobot_Maze.X.production.obj
+__ptext23 2C98 0 CODE 0 text23 dist/default/production\iRobot_Maze.X.production.obj
+__ptext24 2BF4 0 CODE 0 text24 dist/default/production\iRobot_Maze.X.production.obj
+__ptext25 2CBE 0 CODE 0 text25 dist/default/production\iRobot_Maze.X.production.obj
+__ptext26 2C72 0 CODE 0 text26 dist/default/production\iRobot_Maze.X.production.obj
+__ptext27 2E1C 0 CODE 0 text27 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_ser_init 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+___lwdiv 2F84 0 CODE 0 text13 dist/default/production\iRobot_Maze.X.production.obj
+__pmaintext D8 0 CODE 0 maintext dist/default/production\iRobot_Maze.X.production.obj
+Drive@speedH 24 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+Drive@speedL 21 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_mazeGridDefault D6 0 BANK1 1 dataBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__Lcommon 0 0 ABS 0 common -
+__Lconfig 400E 0 CONFIG 0 config -
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__Hinittext 0 0 ABS 0 inittext -
+___wmul@multiplier 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_setupADC 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_setupLCD 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__size_of_setupSPI 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_re_route E0C 0 CODE 0 text6 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_getADC 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+spi_transfer@data 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+spi_transfer@temp 21 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_PB7Counter 55 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+main@fifth EF 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+main@first EB 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+___lwdiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+lcdWriteToDigitBCD@HunsDigit 27 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+main@third ED 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_lcdWriteString 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_orientation_path 5C 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_Drive1m 1714 0 CODE 0 text10 dist/default/production\iRobot_Maze.X.production.obj
+_lowByte 5B 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_re_route FF0 0 CODE 0 text6 dist/default/production\iRobot_Maze.X.production.obj
+stackhi 0 0 ABS 0 - C:\Users\Jason\AppData\Local\Temp\s47g.obj
+stacklo 0 0 ABS 0 - C:\Users\Jason\AppData\Local\Temp\s47g.obj
+lcdWriteToDigitBCD@OnesDigit 2D 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_wallFollow 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__end_of__stringtab 200C 0 STRING 0 strings dist/default/production\iRobot_Maze.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_highByte 79 0 COMMON 1 bssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+__end_of_TravelPath E0C 0 CODE 0 text7 dist/default/production\iRobot_Maze.X.production.obj
+_x_goto 60 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_x_path 62 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Lspace_0 0 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__pbssCOMMON 77 0 COMMON 1 bssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+__HbitbssCOMMON 0 0 ABS 0 bitbssCOMMON -
+_y_goto 64 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_y_path 66 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+init_fetch0 2C50 0 CODE 0 inittext dist/default/production\iRobot_Maze.X.production.obj
+__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__Lend_init 24 0 CODE 0 end_init -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+end_of_initialization D0 0 CODE 0 cinit dist/default/production\iRobot_Maze.X.production.obj
+PathTo@sum 42 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+main@fourth EE 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__Hintentry 24 0 CODE 0 intentry -
+_ser_init 2C32 0 CODE 0 text5 dist/default/production\iRobot_Maze.X.production.obj
+__Lstrings 0 0 ABS 0 strings -
+ser_putch@c 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+___lwdiv@dividend 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+?___lwdiv 20 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_reset_flag 385 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+lcdWriteToDigitBCD@TenThouDigit 2B 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__Hreset_vec 6 0 CODE 0 reset_vec -
+__HbssBANK0 0 0 ABS 0 bssBANK0 -
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__HbssBANK3 0 0 ABS 0 bssBANK3 -
+DriveDirect@VelocityRight 21 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_setupADC 2D38 0 CODE 0 text4 dist/default/production\iRobot_Maze.X.production.obj
+_setupLCD 101E 0 CODE 0 text3 dist/default/production\iRobot_Maze.X.production.obj
+_setupSPI 2D64 0 CODE 0 text2 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_ser_init 2C50 0 CODE 0 text5 dist/default/production\iRobot_Maze.X.production.obj
+Drive1m@n 38 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__ptext1 1000 0 CODE 0 text1 dist/default/production\iRobot_Maze.X.production.obj
+__ptext2 2D64 0 CODE 0 text2 dist/default/production\iRobot_Maze.X.production.obj
+__ptext3 101E 0 CODE 0 text3 dist/default/production\iRobot_Maze.X.production.obj
+__ptext4 2D38 0 CODE 0 text4 dist/default/production\iRobot_Maze.X.production.obj
+__ptext5 2C32 0 CODE 0 text5 dist/default/production\iRobot_Maze.X.production.obj
+__ptext6 E0C 0 CODE 0 text6 dist/default/production\iRobot_Maze.X.production.obj
+__ptext7 BE2 0 CODE 0 text7 dist/default/production\iRobot_Maze.X.production.obj
+__ptext8 13CA 0 CODE 0 text8 dist/default/production\iRobot_Maze.X.production.obj
+__ptext9 2E68 0 CODE 0 text9 dist/default/production\iRobot_Maze.X.production.obj
+_intersection_orientation 5A 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_ADCMain 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__end_of_setupADC 2D64 0 CODE 0 text4 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_setupLCD 1070 0 CODE 0 text3 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_setupSPI 2D96 0 CODE 0 text2 dist/default/production\iRobot_Maze.X.production.obj
+__Lpowerup 0 0 CODE 0 powerup -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+__end_of_lcdWriteControl 2CE6 0 CODE 0 text25 dist/default/production\iRobot_Maze.X.production.obj
+__CFG_FOSC$HS 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+PathTo@F1222 190 0 BANK3 1 dataBANK3 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_DriveDirect 1294 0 CODE 0 text14 dist/default/production\iRobot_Maze.X.production.obj
+__end_of__initialization D0 0 CODE 0 cinit dist/default/production\iRobot_Maze.X.production.obj
+__Lfunctab 0 0 CODE 0 functab -
+main@second EC 0 BANK1 1 cstackBANK1 dist/default/production\iRobot_Maze.X.production.obj
+?_getSensorData 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__pidataBANK0 2BE6 0 CODE 0 idataBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__pidataBANK1 2CE6 0 CODE 0 idataBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__pidataBANK2 1070 0 CODE 0 idataBANK2 dist/default/production\iRobot_Maze.X.production.obj
+__pidataBANK3 2EB8 0 CODE 0 idataBANK3 dist/default/production\iRobot_Maze.X.production.obj
+__Lclrtext 0 0 ABS 0 clrtext -
+lcdSetCursor@address 23 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_time_count CC 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+PathTo@y_target 25 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_IR_Wall 380 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+__pcstackCOMMON 72 0 COMMON 1 cstackCOMMON dist/default/production\iRobot_Maze.X.production.obj
+_SSPSTAT 94 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_pathShortest A0 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__Hend_init 2A 0 CODE 0 end_init -
+init_ram0 2C58 0 CODE 0 inittext dist/default/production\iRobot_Maze.X.production.obj
+DriveDirect@data 26 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_main BE2 0 CODE 0 maintext dist/default/production\iRobot_Maze.X.production.obj
+__end_of_Drive 2EB8 0 CODE 0 text9 dist/default/production\iRobot_Maze.X.production.obj
+_Drive 2E68 0 CODE 0 text9 dist/default/production\iRobot_Maze.X.production.obj
+_PORTA 5 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_PORTB 6 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_PORTC 7 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_PORTD 8 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_PORTE 9 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RCREG 1A 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_RCSTA 18 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_SPBRG 99 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_SSPIF 63 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TRISA 85 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TRISC 87 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TRISD 88 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TRISE 89 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TXREG 19 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_TXSTA 98 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+_angle 77 0 COMMON 1 bssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+Drive1m@omni_IR 39 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+interrupt_function 8 0 CODE 0 intentry dist/default/production\iRobot_Maze.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+_right 386 -310 COMMON 1 bitbssCOMMON dist/default/production\iRobot_Maze.X.production.obj
+_x_int 61 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_y_int 65 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\iRobot_Maze.X.production.obj
+_lcdWriteControl 2CBE 0 CODE 0 text25 dist/default/production\iRobot_Maze.X.production.obj
+__size_of_isr 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__HdataBANK0 0 0 ABS 0 dataBANK0 -
+__HdataBANK1 0 0 ABS 0 dataBANK1 -
+__HdataBANK2 0 0 ABS 0 dataBANK2 -
+__HdataBANK3 0 0 ABS 0 dataBANK3 -
+__LbitbssCOMMON 0 0 ABS 0 bitbssCOMMON -
+_targets 5F 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+_ADJUSTED_SPEED_L C0 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+_ADJUSTED_SPEED_R C2 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+PathTo@x_target 41 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__initialization 2A 0 CODE 0 cinit dist/default/production\iRobot_Maze.X.production.obj
+___bmul@product 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__pbssBANK0 4D 0 BANK0 1 bssBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\iRobot_Maze.X.production.obj
+__pbssBANK3 1B8 0 BANK3 1 bssBANK3 dist/default/production\iRobot_Maze.X.production.obj
+__CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\iRobot_Maze.X.production.obj
+__pstrings 2000 0 STRING 0 strings dist/default/production\iRobot_Maze.X.production.obj
+ser_getch@rxbyte 21 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+___wmul@product 24 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+__end_of_ADCMain 2D38 0 CODE 0 text15 dist/default/production\iRobot_Maze.X.production.obj
+getSensorData@bytes 22 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+lcdWriteString@s 24 0 BANK0 1 cstackBANK0 dist/default/production\iRobot_Maze.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect is on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+text1 0 800 1000 F 2
+text2 0 16B2 2D64 19 2
+text3 0 80F 101E 29 2
+text4 0 169C 2D38 16 2
+text5 0 1619 2C32 F 2
+text8 0 9E5 13CA A1 2
+text9 0 1734 2E68 28 2
+text10 0 B8A 1714 112 2
+text11 0 A86 150C 104 2
+text12 0 16EB 2DD6 23 2
+text13 0 17C2 2F84 3E 2
+text14 0 8BD 117A 8D 2
+text15 0 1687 2D0E 15 2
+text16 0 94A 1294 9B 2
+text17 0 878 10F0 45 2
+text18 0 1784 2F08 3E 2
+text19 0 160D 2C1A C 2
+text20 0 1603 2C06 A 2
+text21 0 C9C 1938 364 2
+text22 0 16CB 2D96 20 2
+text23 0 164C 2C98 13 2
+text24 0 15FA 2BF4 9 2
+text25 0 165F 2CBE 14 2
+text26 0 1639 2C72 13 2
+text27 0 170E 2E1C 26 2
+cstackBANK0 1 20 20 4E 1
+inittext 0 1628 2C50 11 2
+intentry 0 4 8 7FC 2
+bitbssCOMMON 1 380 70 A 1
+reset_vec 0 0 0 3 2
+bssBANK1 1 A0 A0 50 1
+idataBANK0 0 15F3 2BE6 7 2
+idataBANK1 0 1673 2CE6 14 2
+idataBANK2 0 838 1070 40 2
+idataBANK3 0 175C 2EB8 28 2
+strings 0 1000 2000 11 2
+dataBANK2 1 110 110 40 1
+dataBANK3 1 190 190 48 1
+config 0 2007 400E 1 2
